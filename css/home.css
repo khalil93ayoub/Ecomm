@@ -4,65 +4,220 @@
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
+  min-width:0;
+  overflow-x:hidden;
+
   font-family:var(--font-main);
   background:var(--color-surface);
   color:var(--color-text);
 }
 
-header{
+.site-header{
   position:sticky;
   top:0;
   z-index:999;
 
   display:flex;
   align-items:center;
-  justify-content:center;
+  justify-content:space-between;
+  gap:24px;
 
-  height:84px;
-  padding:0 20px;
+  height:76px;
+  padding:0 clamp(18px,4vw,44px);
 
-  background:rgba(255,255,255,0.92);
+  background:rgba(255,255,255,0.94);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--color-line);
 }
 
+.brand-link{
+  display:flex;
+  align-items:center;
+  min-width:0;
+}
+
 .logo{
-  height:100%;
+  height:58px;
   width:auto;
+  max-width:220px;
   object-fit:contain;
+}
+
+.header-nav{
+  display:flex;
+  align-items:center;
+  gap:22px;
+
+  font-size:14px;
+  font-weight:600;
+}
+
+.header-nav a{
+  color:var(--color-text);
+  text-decoration:none;
 }
 
 .hero{
-  padding:64px 22px 48px;
-  text-align:center;
+  position:relative;
+  min-height:620px;
+  overflow:hidden;
+
+  display:flex;
+  align-items:flex-end;
+
+  padding:clamp(120px,18vh,190px) clamp(20px,5vw,64px) clamp(54px,8vh,80px);
+
+  background:#111;
+  color:#fff;
 }
 
-.hero-logo{
-  width:min(520px,88vw);
-  height:auto;
-  margin:0 auto 22px;
-  object-fit:contain;
+.hero video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,0.82),
+    rgba(0,0,0,0.32),
+    rgba(0,0,0,0.08)
+  );
+}
+
+.hero-content{
+  position:relative;
+  z-index:1;
+
+  max-width:680px;
+}
+
+.hero-label{
+  margin-bottom:14px;
+
+  color:rgba(255,255,255,0.82);
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:4px;
+}
+
+.hero h1{
+  max-width:760px;
+  margin-bottom:18px;
+
+  font-size:clamp(44px,7vw,82px);
+  line-height:0.98;
 }
 
 .hero p{
-  max-width:520px;
-  margin:auto;
+  max-width:560px;
+  margin-bottom:28px;
 
-  color:var(--color-muted);
+  color:rgba(255,255,255,0.78);
   font-size:18px;
   line-height:1.7;
 }
 
+.hero-button,
+.featured-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  min-height:48px;
+  padding:0 24px;
+
+  background:#fff;
+  border-radius:999px;
+  color:#111;
+
+  font-weight:700;
+  text-decoration:none;
+}
+
+.featured{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(280px,430px);
+  gap:34px;
+  align-items:center;
+
+  margin:34px clamp(18px,4vw,44px) 0;
+  padding:34px;
+
+  background:#f6f6f6;
+  border-radius:28px;
+}
+
+.featured-media{
+  min-width:0;
+  height:420px;
+  overflow:hidden;
+
+  background:#fff;
+  border-radius:20px;
+}
+
+.featured-media img{
+  width:100%;
+  height:100%;
+  padding:24px;
+  object-fit:contain;
+}
+
+.featured-content{
+  min-width:0;
+}
+
+.featured-label{
+  margin-bottom:14px;
+
+  color:var(--color-muted);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.featured-title{
+  margin-bottom:16px;
+
+  font-size:clamp(32px,4vw,48px);
+  line-height:1.05;
+  font-weight:700;
+}
+
+.featured p{
+  margin-bottom:24px;
+
+  color:var(--color-muted);
+  font-size:16px;
+  line-height:1.7;
+}
+
+.featured-button{
+  background:#111;
+  color:#fff;
+}
+
 .category{
-  margin-top:34px;
-  padding-left:18px;
+  margin-top:54px;
+  padding-left:clamp(18px,4vw,44px);
 }
 
 .category-title{
-  font-size:28px;
   margin-bottom:18px;
-  padding-right:18px;
+  padding-right:clamp(18px,4vw,44px);
+
+  font-size:30px;
 }
 
 .products{
@@ -70,6 +225,7 @@ header{
   gap:16px;
   overflow-x:auto;
 
+  padding-right:clamp(18px,4vw,44px);
   padding-bottom:10px;
 
   scrollbar-width:none;
@@ -80,13 +236,14 @@ header{
 }
 
 .card{
-  min-width:260px;
-  width:260px;
+  flex:0 0 286px;
+  width:286px;
+  min-width:0;
 
   overflow:hidden;
 
   background:#f8f8f8;
-  border-radius:26px;
+  border-radius:22px;
 
   color:var(--color-text);
   text-decoration:none;
@@ -116,16 +273,21 @@ header{
 }
 
 .card-title{
-  font-size:20px;
-  font-weight:600;
+  min-height:48px;
   margin-bottom:8px;
+
+  font-size:19px;
+  font-weight:700;
+  line-height:1.25;
 }
 
 .card-desc{
+  min-height:62px;
+  margin-bottom:16px;
+
   color:var(--color-muted);
   font-size:14px;
   line-height:1.5;
-  margin-bottom:16px;
 }
 
 .card-price{
@@ -133,97 +295,77 @@ header{
   font-weight:700;
 }
 
-.featured{
-  position:relative;
-
-  margin:20px 18px 0;
-  overflow:hidden;
-
-  background:#111;
-  border-radius:32px;
-  color:white;
-}
-
-.featured video{
-  width:100%;
-  height:520px;
-  object-fit:cover;
-  opacity:0.65;
-}
-
-.featured-content{
-  position:absolute;
-  right:30px;
-  bottom:40px;
-  left:30px;
-}
-
-.featured-label{
-  font-size:13px;
-  letter-spacing:2px;
-  margin-bottom:12px;
-  opacity:0.8;
-}
-
-.featured-title{
-  font-size:46px;
-  line-height:1.05;
-  margin-bottom:14px;
-}
-
-.featured-button{
-  display:inline-block;
-
-  padding:14px 26px;
-
-  background:white;
-  border-radius:999px;
-  color:#111;
-
-  font-weight:600;
-  text-decoration:none;
-}
-
 footer{
-  padding:60px 20px;
+  padding:64px 20px;
 }
 
 @media(max-width:768px){
-  header{
-    height:72px;
+  .site-header{
+    height:68px;
     padding:0 16px;
   }
 
-  .hero{
-    padding:50px 20px 34px;
+  .logo{
+    height:48px;
+    max-width:170px;
   }
 
-  .hero-logo{
-    width:min(360px,90vw);
+  .header-nav{
+    gap:14px;
+    font-size:13px;
+  }
+
+  .hero{
+    min-height:560px;
+    padding:120px 20px 48px;
+  }
+
+  .hero h1{
+    font-size:44px;
   }
 
   .hero p{
     font-size:16px;
   }
 
-  .featured video{
-    height:420px;
+  .featured{
+    grid-template-columns:1fr;
+    gap:22px;
+
+    margin:24px 16px 0;
+    padding:20px;
+    border-radius:22px;
   }
 
-  .featured-title{
-    font-size:34px;
+  .featured-media{
+    height:320px;
+  }
+
+  .category{
+    margin-top:42px;
+    padding-left:16px;
+  }
+
+  .category-title{
+    font-size:24px;
+    padding-right:16px;
+  }
+
+  .products{
+    padding-right:16px;
   }
 
   .card{
-    min-width:220px;
-    width:220px;
+    flex-basis:230px;
+    width:230px;
   }
 
   .card-image{
     height:220px;
   }
 
-  .category-title{
-    font-size:24px;
+  .card-title{
+    min-height:0;
+    font-size:17px;
   }
 }
