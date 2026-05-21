@@ -8,8 +8,6 @@
   const productId = document.body.dataset.productId;
   const stripeUrl = document.body.dataset.stripeUrl;
   const videoSrc = document.body.dataset.videoSrc;
-  const shouldDecreaseStock =
-    document.body.dataset.decreaseStock === "true";
 
   if(!productId){
     return;
@@ -55,12 +53,6 @@
   const db = app.firestore();
   const productRef = db.collection("product").doc(productId);
 
-  function setButtonText(text){
-    buyButtons.forEach(button => {
-      button.innerText = text;
-    });
-  }
-
   async function handleBuy(){
     try{
       if(!stripeUrl || stripeUrl.includes("YOUR_STRIPE_LINK")){
@@ -74,14 +66,6 @@
       if(stock <= 0){
         alert("Sold Out");
         return;
-      }
-
-      if(shouldDecreaseStock){
-        setButtonText("Processing...");
-
-        await productRef.update({
-          stock: stock - 1
-        });
       }
 
       window.location.href = stripeUrl;
