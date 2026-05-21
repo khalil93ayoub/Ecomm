@@ -1,0 +1,13 @@
+:root{
+  --color-text:#111;
+  --color-muted:#666;
+  --color-line:#eee;
+  --color-surface:#fff;
+  --font-main:-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+.site-footer{
+  color:#777;
+  font-size:14px;
+  text-align:center;
+}
