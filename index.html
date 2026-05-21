@@ -14,35 +14,26 @@
 
 <!-- HEADER -->
 
-<header>
+<header class="site-header">
 
-  <img
-    src="assets/novara-header.png"
-    class="logo"
-  >
+  <a href="./" class="brand-link">
+    <img
+      src="assets/novara-header.png"
+      class="logo"
+      alt="NOVARA"
+    >
+  </a>
+
+  <nav class="header-nav" aria-label="Store sections">
+    <a href="#tech">Tech</a>
+    <a href="#watches">Watches</a>
+  </nav>
 
 </header>
 
 <!-- HERO -->
 
 <section class="hero">
-
-  <img
-    src="assets/novara-header.png"
-    class="hero-logo"
-    alt="NOVARA"
-  >
-
-  <p>
-    Curated modern essentials designed for
-    everyday lifestyle, technology and travel.
-  </p>
-
-</section>
-
-<!-- FEATURED -->
-
-<section class="featured">
 
   <video autoplay muted loop playsinline>
 
@@ -53,6 +44,47 @@
 
   </video>
 
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+
+    <div class="hero-label">
+      NOVARA
+    </div>
+
+    <h1>
+      Modern essentials for everyday movement.
+    </h1>
+
+    <p>
+      Curated lifestyle, technology and travel pieces with
+      clean design, practical function and fast checkout.
+    </p>
+
+    <a
+      href="vacuum/"
+      class="hero-button"
+    >
+      Shop Featured Product
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FEATURED -->
+
+<section class="featured">
+
+  <div class="featured-media">
+
+    <img
+      src="assets/image1.jpg"
+      alt="Wireless High-Power Car Vacuum Cleaner"
+    >
+
+  </div>
+
   <div class="featured-content">
 
     <div class="featured-label">
@@ -62,6 +94,11 @@
     <div class="featured-title">
       Wireless High-Power Car Vacuum Cleaner
     </div>
+
+    <p>
+      Compact cordless cleaning for car, home and travel,
+      with wet and dry use in a simple handheld design.
+    </p>
 
     <a
       href="vacuum/"
@@ -76,7 +113,7 @@
 
 <!-- TECH -->
 
-<section class="category">
+<section class="category" id="tech">
 
   <div class="category-title">
     Tech Essentials
@@ -165,7 +202,7 @@
 
 <!-- WATCHES -->
 
-<section class="category">
+<section class="category" id="watches">
 
   <div class="category-title">
     Watches
