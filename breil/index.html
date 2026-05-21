@@ -6,12 +6,11 @@
 
 <title>NOVARA | Bow Shot Chronograph</title>
 
+<link rel="stylesheet" href="../css/site.css">
 <link rel="stylesheet" href="../css/watches.css">
 </head>
 
-<body>
-
-<!-- HEADER -->
+<body data-product-id="breil" data-stripe-url="https://buy.stripe.com/8x2eVd5M8b5M5LtgWbcIE03" data-decrease-stock="false">
 
 <header>
 
@@ -24,16 +23,11 @@
 
 </a>
 
-  <button
-    id="buyBtnTop"
-    class="top-btn"
-  >
+  <button id="buyBtnTop" class="top-btn">
     Buy Now
   </button>
 
 </header>
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -62,14 +56,11 @@
 
 </section>
 
-<!-- BUY CARD -->
-
 <section class="buy-card">
 
   <div class="buy-grid">
 
     <div>
-
       <div class="buy-title">
         Breil Bow Shot Chronograph
       </div>
@@ -80,33 +71,17 @@
         resistance, the Bow Shot combines sporty
         performance with refined Italian aesthetics.
       </div>
-
     </div>
 
     <div class="buy-right">
-
-      <div class="price">
-        110€
-      </div>
-
-      <div class="stock" id="stockText">
-        Loading...
-      </div>
-
-      <button
-        id="buyBtn"
-        class="cta"
-      >
-        Buy Now
-      </button>
-
+      <div class="price">110€</div>
+      <div class="stock" id="stockText">Loading...</div>
+      <button id="buyBtn" class="cta">Buy Now</button>
     </div>
 
   </div>
 
 </section>
-
-<!-- GALLERY -->
 
 <section class="gallery">
 
@@ -115,20 +90,13 @@
   </div>
 
   <div class="gallery-grid">
-
     <img src="../assets/breil1.jpg">
-
     <img src="../assets/breil2.jpg">
-
     <img src="../assets/breil3.jpg">
-
     <img src="../assets/breil4.jpg">
-
   </div>
 
 </section>
-
-<!-- FEATURES -->
 
 <section class="features">
 
@@ -139,79 +107,45 @@
   <div class="feature-grid">
 
     <div class="feature">
-
-      <div class="feature-icon">
-        ⌚
-      </div>
-
-      <h3>
-        Chronograph Precision
-      </h3>
-
+      <div class="feature-icon">⌚</div>
+      <h3>Chronograph Precision</h3>
       <p>
         Built with reliable quartz chronograph
         movement for precise timing and sporty
         everyday performance.
       </p>
-
     </div>
 
     <div class="feature">
-
-      <div class="feature-icon">
-        🛡️
-      </div>
-
-      <h3>
-        Gold Steel Construction
-      </h3>
-
+      <div class="feature-icon">🛡️</div>
+      <h3>Gold Steel Construction</h3>
       <p>
         Premium IP gold stainless steel bracelet
         and case with bold masculine detailing.
       </p>
-
     </div>
 
     <div class="feature">
-
-      <div class="feature-icon">
-        🌊
-      </div>
-
-      <h3>
-        100M Water Resistance
-      </h3>
-
+      <div class="feature-icon">🌊</div>
+      <h3>100M Water Resistance</h3>
       <p>
         Designed for everyday durability with
         reliable resistance against water exposure.
       </p>
-
     </div>
 
     <div class="feature">
-
-      <div class="feature-icon">
-        🇮🇹
-      </div>
-
-      <h3>
-        Italian Design Identity
-      </h3>
-
+      <div class="feature-icon">🇮🇹</div>
+      <h3>Italian Design Identity</h3>
       <p>
         Distinctive styling inspired by modern
         Italian sport luxury aesthetics.
       </p>
-
     </div>
 
   </div>
 
 </section>
-
-<!-- SPECS -->
 
 <section class="specs">
 
@@ -220,129 +154,26 @@
   </div>
 
   <div class="spec-box">
-
-    <div class="spec-row">
-      <span>Movement</span>
-      <span>Quartz Chronograph</span>
-    </div>
-
-    <div class="spec-row">
-      <span>Case Size</span>
-      <span>43mm</span>
-    </div>
-
-    <div class="spec-row">
-      <span>Case Material</span>
-      <span>IP Gold Stainless Steel</span>
-    </div>
-
-    <div class="spec-row">
-      <span>Dial</span>
-      <span>Black Chronograph</span>
-    </div>
-
-    <div class="spec-row">
-      <span>Glass</span>
-      <span>Mineral Crystal</span>
-    </div>
-
-    <div class="spec-row">
-      <span>Water Resistance</span>
-      <span>100M</span>
-    </div>
-
-    <div class="spec-row">
-      <span>Bracelet</span>
-      <span>Gold Steel Bracelet</span>
-    </div>
-
+    <div class="spec-row"><span>Movement</span><span>Quartz Chronograph</span></div>
+    <div class="spec-row"><span>Case Size</span><span>43mm</span></div>
+    <div class="spec-row"><span>Case Material</span><span>IP Gold Stainless Steel</span></div>
+    <div class="spec-row"><span>Dial</span><span>Black Chronograph</span></div>
+    <div class="spec-row"><span>Glass</span><span>Mineral Crystal</span></div>
+    <div class="spec-row"><span>Water Resistance</span><span>100M</span></div>
+    <div class="spec-row"><span>Bracelet</span><span>Gold Steel Bracelet</span></div>
   </div>
 
 </section>
 
-<!-- FOOTER -->
-
-<footer>
+<footer class="site-footer">
 
   © NOVARA — Modern Essentials
 
 </footer>
 
-<!-- FIREBASE -->
-
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-
-<script>
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDBYtMrRsnfHS8QMz8UgMjVmrBJ92siSbU",
-  authDomain: "vacuum-cleaner-e8857.firebaseapp.com",
-  projectId: "vacuum-cleaner-e8857"
-};
-
-firebase.initializeApp(firebaseConfig);
-
-const db = firebase.firestore();
-
-</script>
-
-<!-- BUY -->
-
-<script>
-
-async function handleBuy(){
-
-  try{
-
-    const ref = db.collection("product").doc("breil");
-
-    const doc = await ref.get();
-
-    const stock = doc.data().stock;
-
-    if(stock <= 0){
-      return alert("Sold Out");
-    }
-
-    window.location.href =
-      "https://buy.stripe.com/8x2eVd5M8b5M5LtgWbcIE03";
-
-  }catch(e){
-
-    alert("Error");
-
-  }
-
-}
-
-document.getElementById("buyBtn").onclick =
-  handleBuy;
-
-document.getElementById("buyBtnTop").onclick =
-  handleBuy;
-
-</script>
-
-<!-- STOCK -->
-
-<script>
-
-db.collection("product")
-.doc("breil")
-.onSnapshot((doc)=>{
-
-  const stock = doc.data().stock;
-
-  document.getElementById("stockText").innerText =
-    stock > 0
-      ? `In stock: ${stock}`
-      : `Out of stock`;
-
-});
-
-</script>
+<script src="../js/storefront.js"></script>
 
 </body>
 </html>
