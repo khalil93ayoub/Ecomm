@@ -100,6 +100,10 @@
       with wet and dry use in a simple handheld design.
     </p>
 
+    <div class="featured-stock" data-stock-text data-product-id="vacuum">
+      Checking stock...
+    </div>
+
     <a
       href="vacuum/"
       class="featured-button"
@@ -121,10 +125,10 @@
 
   <div class="products">
 
-    <a href="vacuum/" class="card">
+    <a href="vacuum/" class="card" data-product-id="vacuum">
 
       <div class="card-image">
-        <img src="assets/image1.jpg">
+        <img src="assets/image1.jpg" alt="Wireless High-Power Car Vacuum Cleaner">
       </div>
 
       <div class="card-content">
@@ -142,14 +146,18 @@
           24,99 €
         </div>
 
+        <div class="card-stock" data-stock-text data-product-id="vacuum">
+          Checking stock...
+        </div>
+
       </div>
 
     </a>
 
-    <a href="magnetic-charger/" class="card">
+    <a href="magnetic-charger/" class="card" data-product-id="magnetic-charger">
 
       <div class="card-image">
-        <img src="assets/magnetic-charger-1.jpg">
+        <img src="assets/magnetic-charger-1.jpg" alt="3 in 1 Magnetic Wireless Charger">
       </div>
 
       <div class="card-content">
@@ -167,14 +175,18 @@
           19,99 €
         </div>
 
+        <div class="card-stock" data-stock-text data-product-id="magnetic-charger">
+          Checking stock...
+        </div>
+
       </div>
 
     </a>
 
-    <a href="cable/" class="card">
+    <a href="cable/" class="card" data-product-id="cable">
 
       <div class="card-image">
-        <img src="assets/cable1.jpg">
+        <img src="assets/cable1.jpg" alt="240W Fast Charging Cable">
       </div>
 
       <div class="card-content">
@@ -190,6 +202,10 @@
 
         <div class="card-price">
           8,99 €
+        </div>
+
+        <div class="card-stock" data-stock-text data-product-id="cable">
+          Checking stock...
         </div>
 
       </div>
@@ -210,10 +226,10 @@
 
   <div class="products">
 
-    <a href="breil/" class="card">
+    <a href="breil/" class="card" data-product-id="breil">
 
       <div class="card-image">
-        <img src="assets/breil1.jpg">
+        <img src="assets/breil1.jpg" alt="Breil Bow Shot Chronograph">
       </div>
 
       <div class="card-content">
@@ -231,14 +247,18 @@
           110 €
         </div>
 
+        <div class="card-stock" data-stock-text data-product-id="breil">
+          Checking stock...
+        </div>
+
       </div>
 
     </a>
 
-    <a href="fossil-privateer/" class="card">
+    <a href="fossil-privateer/" class="card" data-product-id="privateer">
 
       <div class="card-image">
-        <img src="assets/fossil-privateer-hero.jpg">
+        <img src="assets/fossil-privateer-hero.jpg" alt="Fossil Privateer Chronograph">
       </div>
 
       <div class="card-content">
@@ -253,6 +273,10 @@
 
         <div class="card-price">
           105 €
+        </div>
+
+        <div class="card-stock" data-stock-text data-product-id="privateer">
+          Checking stock...
         </div>
 
       </div>
@@ -270,6 +294,10 @@
   © NOVARA — Modern Essentials
 
 </footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script src="js/storefront.js"></script>
 
 </body>
 </html>
