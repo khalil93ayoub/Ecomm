@@ -6,6 +6,26 @@
   --font-main:-apple-system,BlinkMacSystemFont,sans-serif;
 }
 
+.stock-in{
+  color:#167a3a;
+}
+
+.stock-low{
+  color:#a15c00;
+}
+
+.stock-out,
+.stock-error{
+  color:#9b1c1c;
+}
+
+button:disabled,
+.cta:disabled,
+.top-btn:disabled{
+  cursor:not-allowed;
+  opacity:0.58;
+}
+
 .site-footer{
   color:#777;
   font-size:14px;
