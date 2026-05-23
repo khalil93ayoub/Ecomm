@@ -5,9 +5,14 @@
     projectId: "vacuum-cleaner-e8857"
   };
 
+  const stockCollections = ["product", "products", "inventory", "stock"];
+
   const stockAliases = {
-    privateer: ["fossil-privateer"],
-    "fossil-privateer": ["privateer"]
+    privateer: ["fossil-privateer", "fossil_privateer", "fossilPrivateer"],
+    "fossil-privateer": ["privateer", "fossil_privateer", "fossilPrivateer"],
+    "magnetic-charger": ["magnetic_charger", "magneticCharger", "charger"],
+    cable: ["fast-cable", "fast_cable", "charging-cable"],
+    vacuum: ["vacuum-cleaner", "car-vacuum", "car_vacuum"]
   };
 
   const productId = document.body.dataset.productId;
@@ -68,6 +73,7 @@
     stockTargets.forEach(target => {
       target.innerText = "Stock unavailable";
       target.classList.add("stock-error");
+      target.title = "Firebase scripts did not load.";
     });
     return;
   }
@@ -82,8 +88,14 @@
     return Array.from(new Set([id].concat(stockAliases[id] || []))).filter(Boolean);
   }
 
-  function productRefFor(id){
-    return db.collection("product").doc(id);
+  function stockRefsFor(id){
+    return stockCollections.flatMap(collection =>
+      productIdsFor(id).map(candidate => ({
+        collection,
+        id: candidate,
+        ref: db.collection(collection).doc(candidate)
+      }))
+    );
   }
 
   function readStock(data){
@@ -91,29 +103,34 @@
       return null;
     }
 
-    const value = data.stock ?? data.quantity ?? data.qty;
+    const value = data.stock ?? data.quantity ?? data.qty ?? data.available ?? data.inventory;
     const stock = Number(value);
 
     return Number.isFinite(stock) ? stock : null;
   }
 
-  function renderStock(target, stock){
+  function renderStock(target, stock, meta){
     target.classList.remove("stock-in", "stock-low", "stock-out", "stock-error");
 
     if(stock === null){
       target.innerText = "Stock not set";
       target.classList.add("stock-error");
+      target.title = "No readable stock value was found in Firebase.";
       return;
     }
 
     if(stock <= 0){
       target.innerText = "Out of stock";
       target.classList.add("stock-out");
-      return;
+    }else{
+      target.innerText = `In stock: ${stock}`;
+      target.classList.add(stock <= 3 ? "stock-low" : "stock-in");
     }
 
-    target.innerText = `In stock: ${stock}`;
-    target.classList.add(stock <= 3 ? "stock-low" : "stock-in");
+    if(meta){
+      target.dataset.stockSource = `${meta.collection}/${meta.id}`;
+      target.title = `Firebase: ${meta.collection}/${meta.id}`;
+    }
   }
 
   function setBuyButtonState(stock){
@@ -135,17 +152,19 @@
       return;
     }
 
-    const ids = productIdsFor(id);
-    const states = new Map(ids.map(candidate => [candidate, null]));
+    const refs = stockRefsFor(id);
+    const states = new Map(refs.map(item => [`${item.collection}/${item.id}`, null]));
+    const sourceByKey = new Map(refs.map(item => [`${item.collection}/${item.id}`, item]));
 
     target.innerText = "Checking stock...";
 
     function renderBestAvailable(){
-      for(const candidate of ids){
-        const stock = states.get(candidate);
+      for(const item of refs){
+        const key = `${item.collection}/${item.id}`;
+        const stock = states.get(key);
 
         if(stock !== null){
-          renderStock(target, stock);
+          renderStock(target, stock, sourceByKey.get(key));
 
           if(target.id === "stockText"){
             setBuyButtonState(stock);
@@ -162,20 +181,23 @@
       }
     }
 
-    ids.forEach(candidate => {
-      productRefFor(candidate).onSnapshot(doc => {
-        states.set(candidate, doc.exists ? readStock(doc.data()) : null);
+    refs.forEach(item => {
+      const key = `${item.collection}/${item.id}`;
+
+      item.ref.onSnapshot(doc => {
+        states.set(key, doc.exists ? readStock(doc.data()) : null);
         renderBestAvailable();
-      }, () => {
-        states.set(candidate, null);
+      }, error => {
+        states.set(key, null);
+        target.dataset.stockError = error.code || "firebase-error";
         renderBestAvailable();
       });
     });
   }
 
   async function getProductStock(id){
-    for(const candidate of productIdsFor(id)){
-      const doc = await productRefFor(candidate).get();
+    for(const item of stockRefsFor(id)){
+      const doc = await item.ref.get();
 
       if(doc.exists){
         return readStock(doc.data());
