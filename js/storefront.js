@@ -5,6 +5,11 @@
     projectId: "vacuum-cleaner-e8857"
   };
 
+  const stockAliases = {
+    privateer: ["fossil-privateer"],
+    "fossil-privateer": ["privateer"]
+  };
+
   const productId = document.body.dataset.productId;
   const stripeUrl = document.body.dataset.stripeUrl;
   const videoSrc = document.body.dataset.videoSrc;
@@ -72,9 +77,14 @@
     : firebase.initializeApp(firebaseConfig);
 
   const db = app.firestore();
-  const productRef = productId
-    ? db.collection("product").doc(productId)
-    : null;
+
+  function productIdsFor(id){
+    return Array.from(new Set([id].concat(stockAliases[id] || []))).filter(Boolean);
+  }
+
+  function productRefFor(id){
+    return db.collection("product").doc(id);
+  }
 
   function readStock(data){
     if(!data){
@@ -125,19 +135,43 @@
       return;
     }
 
+    const ids = productIdsFor(id);
+    const states = new Map(ids.map(candidate => [candidate, null]));
+
     target.innerText = "Checking stock...";
 
-    db.collection("product").doc(id).onSnapshot(doc => {
-      if(!doc.exists){
-        renderStock(target, null);
-        return;
+    function renderBestAvailable(){
+      for(const candidate of ids){
+        if(states.get(candidate) !== null){
+          renderStock(target, states.get(candidate));
+          return;
+        }
       }
 
-      renderStock(target, readStock(doc.data()));
-    }, () => {
-      target.innerText = "Stock unavailable";
-      target.classList.add("stock-error");
+      renderStock(target, null);
+    }
+
+    ids.forEach(candidate => {
+      productRefFor(candidate).onSnapshot(doc => {
+        states.set(candidate, doc.exists ? readStock(doc.data()) : null);
+        renderBestAvailable();
+      }, () => {
+        states.set(candidate, null);
+        renderBestAvailable();
+      });
     });
+  }
+
+  async function getProductStock(id){
+    for(const candidate of productIdsFor(id)){
+      const doc = await productRefFor(candidate).get();
+
+      if(doc.exists){
+        return readStock(doc.data());
+      }
+    }
+
+    return null;
   }
 
   async function handleBuy(){
@@ -147,13 +181,12 @@
         return;
       }
 
-      if(!productRef){
+      if(!productId){
         alert("Product stock is not configured.");
         return;
       }
 
-      const doc = await productRef.get();
-      const stock = doc.exists ? readStock(doc.data()) : null;
+      const stock = await getProductStock(productId);
 
       if(stock === null){
         alert("Stock is not configured.");
@@ -175,19 +208,28 @@
     button.addEventListener("click", handleBuy);
   });
 
-  if(productRef){
-    productRef.onSnapshot(doc => {
-      const stock = doc.exists ? readStock(doc.data()) : null;
-      const stockText = document.getElementById("stockText");
+  if(productId){
+    const stockText = document.getElementById("stockText");
 
-      if(stockText && !stockText.dataset.stockText){
-        renderStock(stockText, stock);
-      }
-
-      setBuyButtonState(stock);
-    });
+    if(stockText && !stockText.dataset.stockText){
+      stockText.dataset.stockText = "";
+      stockText.dataset.productId = productId;
+      stockTargets.push(stockText);
+    }
   }
 
-  stockTargets.forEach(bindStockTarget);
+  stockTargets.forEach(target => {
+    bindStockTarget(target);
+
+    if(target.id === "stockText"){
+      const id = target.dataset.productId || productId;
+
+      productIdsFor(id).forEach(candidate => {
+        productRefFor(candidate).onSnapshot(doc => {
+          setBuyButtonState(doc.exists ? readStock(doc.data()) : null);
+        });
+      });
+    }
+  });
 
 })();
