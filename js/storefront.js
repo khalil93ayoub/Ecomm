@@ -142,13 +142,24 @@
 
     function renderBestAvailable(){
       for(const candidate of ids){
-        if(states.get(candidate) !== null){
-          renderStock(target, states.get(candidate));
+        const stock = states.get(candidate);
+
+        if(stock !== null){
+          renderStock(target, stock);
+
+          if(target.id === "stockText"){
+            setBuyButtonState(stock);
+          }
+
           return;
         }
       }
 
       renderStock(target, null);
+
+      if(target.id === "stockText"){
+        setBuyButtonState(null);
+      }
     }
 
     ids.forEach(candidate => {
@@ -218,18 +229,6 @@
     }
   }
 
-  stockTargets.forEach(target => {
-    bindStockTarget(target);
-
-    if(target.id === "stockText"){
-      const id = target.dataset.productId || productId;
-
-      productIdsFor(id).forEach(candidate => {
-        productRefFor(candidate).onSnapshot(doc => {
-          setBuyButtonState(doc.exists ? readStock(doc.data()) : null);
-        });
-      });
-    }
-  });
+  stockTargets.forEach(bindStockTarget);
 
 })();
