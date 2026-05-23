@@ -196,7 +196,7 @@ body{
 }
 
 .featured p{
-  margin-bottom:24px;
+  margin-bottom:16px;
 
   color:var(--color-muted);
   font-size:16px;
@@ -206,6 +206,48 @@ body{
 .featured-button{
   background:#111;
   color:#fff;
+}
+
+.featured-stock,
+.card-stock{
+  display:inline-flex;
+  align-items:center;
+  width:fit-content;
+
+  border-radius:999px;
+  font-weight:700;
+  line-height:1;
+}
+
+.featured-stock{
+  margin-bottom:24px;
+  padding:10px 14px;
+
+  background:#fff;
+  border:1px solid var(--color-line);
+  font-size:14px;
+}
+
+.card-stock{
+  margin-top:12px;
+  padding:8px 10px;
+
+  background:#fff;
+  border:1px solid var(--color-line);
+  font-size:12px;
+}
+
+.stock-in{
+  color:#167a3a;
+}
+
+.stock-low{
+  color:#a15c00;
+}
+
+.stock-out,
+.stock-error{
+  color:#9b1c1c;
 }
 
 .category{
