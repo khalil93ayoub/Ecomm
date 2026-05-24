@@ -2,6 +2,8 @@
 
 Static ecommerce storefront for NOVARA products.
 
+The storefront is German-first and includes a shared DE/EN language switcher in the header.
+
 ## Structure
 
 - `index.html` is the home page.

@@ -6,6 +6,7 @@
   };
 
   const stockCollections = ["product", "products", "inventory", "stock"];
+  const languageStorageKey = "novara-language";
 
   const stockAliases = {
     privateer: ["fossil-privateer", "fossil_privateer", "fossilPrivateer"],
@@ -15,19 +16,152 @@
     vacuum: ["vacuum-cleaner", "car-vacuum", "car_vacuum"]
   };
 
+  const messages = {
+    de: {
+      checkingStock: "Bestand wird geprüft...",
+      stockUnavailable: "Bestand nicht verfügbar",
+      stockUnavailableTitle: "Firebase-Skripte konnten nicht geladen werden.",
+      stockNotSet: "Bestand nicht hinterlegt",
+      stockNotSetTitle: "In Firebase wurde kein lesbarer Bestand gefunden.",
+      outOfStock: "Ausverkauft",
+      inStock: "Auf Lager: {stock}",
+      soldOut: "Ausverkauft",
+      buyNow: "Kaufen",
+      checkoutNotConfigured: "Checkout-Link ist nicht konfiguriert.",
+      productStockNotConfigured: "Produktbestand ist nicht konfiguriert.",
+      stockNotConfigured: "Bestand ist nicht konfiguriert.",
+      error: "Fehler"
+    },
+    en: {
+      checkingStock: "Checking stock...",
+      stockUnavailable: "Stock unavailable",
+      stockUnavailableTitle: "Firebase scripts did not load.",
+      stockNotSet: "Stock not set",
+      stockNotSetTitle: "No readable stock value was found in Firebase.",
+      outOfStock: "Out of stock",
+      inStock: "In stock: {stock}",
+      soldOut: "Sold Out",
+      buyNow: "Buy Now",
+      checkoutNotConfigured: "Checkout link is not configured.",
+      productStockNotConfigured: "Product stock is not configured.",
+      stockNotConfigured: "Stock is not configured.",
+      error: "Error"
+    }
+  };
+
   const productId = document.body.dataset.productId;
   const stripeUrl = document.body.dataset.stripeUrl;
   const videoSrc = document.body.dataset.videoSrc;
   const stockTargets = Array.from(document.querySelectorAll("[data-stock-text]"));
-
-  if(!productId && stockTargets.length === 0){
-    return;
-  }
-
   const buyButtons = [
     document.getElementById("buyBtn"),
     document.getElementById("buyBtnTop")
   ].filter(Boolean);
+
+  function readStoredLanguage(){
+    try{
+      return window.localStorage.getItem(languageStorageKey) === "en" ? "en" : "de";
+    }catch(error){
+      return "de";
+    }
+  }
+
+  function storeLanguage(lang){
+    try{
+      window.localStorage.setItem(languageStorageKey, lang);
+    }catch(error){
+      return;
+    }
+  }
+
+  let currentLang = readStoredLanguage();
+  let currentBuyButtonStock;
+
+  const stockStateByTarget = new WeakMap();
+
+  function message(key, replacements){
+    let value = messages[currentLang][key] || messages.de[key] || key;
+
+    Object.entries(replacements || {}).forEach(([name, replacement]) => {
+      value = value.replace(`{${name}}`, replacement);
+    });
+
+    return value;
+  }
+
+  function setLocalizedAttribute(selector, attribute){
+    document.querySelectorAll(selector).forEach(element => {
+      const value = element.getAttribute(`data-lang-${attribute}-${currentLang}`);
+
+      if(value !== null){
+        element.setAttribute(attribute, value);
+      }
+    });
+  }
+
+  function updateLanguageToggles(){
+    document.querySelectorAll("[data-language-toggle]").forEach(toggle => {
+      toggle.setAttribute("aria-pressed", currentLang === "en" ? "true" : "false");
+
+      toggle.querySelectorAll("[data-lang-option]").forEach(option => {
+        option.classList.toggle("is-active", option.dataset.langOption === currentLang);
+      });
+    });
+  }
+
+  function refreshStockLabels(){
+    stockTargets.forEach(target => {
+      const state = stockStateByTarget.get(target);
+
+      if(state){
+        renderStock(target, state.stock, state.meta);
+      }
+    });
+  }
+
+  function refreshBuyButtons(){
+    if(currentBuyButtonStock !== undefined){
+      setBuyButtonState(currentBuyButtonStock);
+    }
+  }
+
+  function applyLanguage(lang){
+    currentLang = lang === "en" ? "en" : "de";
+    storeLanguage(currentLang);
+    document.documentElement.lang = currentLang;
+
+    document.querySelectorAll("[data-lang-de], [data-lang-en]").forEach(element => {
+      const value = element.getAttribute(`data-lang-${currentLang}`);
+
+      if(value !== null){
+        element.textContent = value;
+      }
+    });
+
+    document.querySelectorAll("[data-lang-html-de], [data-lang-html-en]").forEach(element => {
+      const value = element.getAttribute(`data-lang-html-${currentLang}`);
+
+      if(value !== null){
+        element.innerHTML = value;
+      }
+    });
+
+    setLocalizedAttribute(`[data-lang-aria-label-${currentLang}]`, "aria-label");
+    setLocalizedAttribute(`[data-lang-title-${currentLang}]`, "title");
+    setLocalizedAttribute(`[data-lang-alt-${currentLang}]`, "alt");
+
+    updateLanguageToggles();
+    refreshStockLabels();
+    refreshBuyButtons();
+  }
+
+  document.querySelectorAll("[data-language-toggle]").forEach(toggle => {
+    toggle.addEventListener("click", () => {
+      applyLanguage(currentLang === "de" ? "en" : "de");
+    });
+  });
+
+  applyLanguage(currentLang);
 
   function setActive(el){
     document
@@ -49,7 +183,7 @@
     }
 
     mainMedia.innerHTML = `
-      <img class="gallery-media" src="${src}">
+      <img class="gallery-media" src="${src}" alt="">
     `;
   };
 
@@ -69,11 +203,25 @@
     `;
   };
 
+  if(!productId && stockTargets.length === 0){
+    return;
+  }
+
+  if(productId){
+    const stockText = document.getElementById("stockText");
+
+    if(stockText && !stockText.dataset.stockText){
+      stockText.dataset.stockText = "";
+      stockText.dataset.productId = productId;
+      stockTargets.push(stockText);
+    }
+  }
+
   if(!window.firebase){
     stockTargets.forEach(target => {
-      target.innerText = "Stock unavailable";
+      target.innerText = message("stockUnavailable");
       target.classList.add("stock-error");
-      target.title = "Firebase scripts did not load.";
+      target.title = message("stockUnavailableTitle");
     });
     return;
   }
@@ -110,20 +258,21 @@
   }
 
   function renderStock(target, stock, meta){
+    stockStateByTarget.set(target, { stock, meta });
     target.classList.remove("stock-in", "stock-low", "stock-out", "stock-error");
 
     if(stock === null){
-      target.innerText = "Stock not set";
+      target.innerText = message("stockNotSet");
       target.classList.add("stock-error");
-      target.title = "No readable stock value was found in Firebase.";
+      target.title = message("stockNotSetTitle");
       return;
     }
 
     if(stock <= 0){
-      target.innerText = "Out of stock";
+      target.innerText = message("outOfStock");
       target.classList.add("stock-out");
     }else{
-      target.innerText = `In stock: ${stock}`;
+      target.innerText = message("inStock", { stock });
       target.classList.add(stock <= 3 ? "stock-low" : "stock-in");
     }
 
@@ -134,13 +283,15 @@
   }
 
   function setBuyButtonState(stock){
+    currentBuyButtonStock = stock;
+
     buyButtons.forEach(button => {
       if(stock !== null && stock <= 0){
         button.disabled = true;
-        button.innerText = "Sold Out";
+        button.innerText = message("soldOut");
       }else{
         button.disabled = false;
-        button.innerText = "Buy Now";
+        button.innerText = message("buyNow");
       }
     });
   }
@@ -156,7 +307,7 @@
     const states = new Map(refs.map(item => [`${item.collection}/${item.id}`, null]));
     const sourceByKey = new Map(refs.map(item => [`${item.collection}/${item.id}`, item]));
 
-    target.innerText = "Checking stock...";
+    target.innerText = message("checkingStock");
 
     function renderBestAvailable(){
       for(const item of refs){
@@ -210,46 +361,36 @@
   async function handleBuy(){
     try{
       if(!stripeUrl || stripeUrl.includes("YOUR_STRIPE_LINK")){
-        alert("Checkout link is not configured.");
+        alert(message("checkoutNotConfigured"));
         return;
       }
 
       if(!productId){
-        alert("Product stock is not configured.");
+        alert(message("productStockNotConfigured"));
         return;
       }
 
       const stock = await getProductStock(productId);
 
       if(stock === null){
-        alert("Stock is not configured.");
+        alert(message("stockNotConfigured"));
         return;
       }
 
       if(stock <= 0){
-        alert("Sold Out");
+        alert(message("soldOut"));
         return;
       }
 
       window.location.href = stripeUrl;
     }catch(error){
-      alert("Error");
+      alert(message("error"));
     }
   }
 
   buyButtons.forEach(button => {
     button.addEventListener("click", handleBuy);
   });
-
-  if(productId){
-    const stockText = document.getElementById("stockText");
-
-    if(stockText && !stockText.dataset.stockText){
-      stockText.dataset.stockText = "";
-      stockText.dataset.productId = productId;
-      stockTargets.push(stockText);
-    }
-  }
 
   stockTargets.forEach(bindStockTarget);
 
