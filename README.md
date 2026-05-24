@@ -7,6 +7,8 @@ Static ecommerce storefront for NOVARA products.
 - `index.html` is the home page.
 - `vacuum/`, `magnetic-charger/`, `cable/`, `breil/`, and `fossil-privateer/` contain the product pages.
 - `css/site.css` contains shared site structure variables and common footer styling.
-- `css/home.css`, `css/tech-product.css`, and `css/watches.css` contain page-specific visual styling.
-- `js/storefront.js` contains shared product-page behavior for stock, buy buttons, and galleries.
-- `assets/` contains product images and videos.
+- `css/home.css` contains home page styling.
+- `css/product.css` contains generated product page styling.
+- `js/storefront.js` contains Firebase stock display, Stripe buy button, and gallery behavior.
+- `scripts/render-products.py` is the source for regenerating all product pages.
+- `assets/` contains the active product images, videos, and responsive logo files.
