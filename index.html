@@ -12,292 +12,210 @@
 
 <body>
 
-<!-- HEADER -->
+<div class="promo-bar">
+  Free shipping on all orders over 50 EUR
+</div>
 
 <header class="site-header">
-
-  <a href="./" class="brand-link">
-    <img
-      src="assets/novara-header.png"
-      class="logo"
-      alt="NOVARA"
-    >
+  <a href="./" class="brand-link" aria-label="NOVARA home">
+    <span class="brand-monogram">N</span>
+    <span>NOVARA</span>
   </a>
 
   <nav class="header-nav" aria-label="Store sections">
-    <a href="#tech">Tech</a>
+    <a href="#collections">Collections</a>
     <a href="#watches">Watches</a>
+    <a href="#tech">Tech</a>
+    <a href="#car-care">Car Care</a>
   </nav>
 
+  <a href="#collections" class="header-action" aria-label="Shop collections">Shop</a>
 </header>
 
-<!-- HERO -->
-
-<section class="hero">
-
-  <video autoplay muted loop playsinline>
-
-    <source
-      src="assets/product-video.mp4"
-      type="video/mp4"
-    >
-
-  </video>
-
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-
-    <div class="hero-label">
-      NOVARA
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">Modern essentials</span>
+      <h1>Designed for <span>movement.</span></h1>
+      <p>Premium everyday essentials with clean design, practical function, live stock, and secure checkout.</p>
+      <div class="hero-actions">
+        <a href="#collections" class="button button-dark">Shop collection</a>
+        <a href="#watches" class="button button-link">Explore bestsellers</a>
+      </div>
     </div>
 
-    <h1>
-      Modern essentials for everyday movement.
-    </h1>
+    <div class="hero-media">
+      <img src="assets/fossil-privateer-hero.jpg" alt="NOVARA watch on stone surface">
+    </div>
+  </section>
 
-    <p>
-      Curated lifestyle, technology and travel pieces with
-      clean design, practical function and fast checkout.
-    </p>
+  <section class="benefits" aria-label="Store benefits">
+    <div class="benefit">
+      <span>Free shipping</span>
+      <small>On orders over 50 EUR</small>
+    </div>
+    <div class="benefit">
+      <span>Easy returns</span>
+      <small>30 day return policy</small>
+    </div>
+    <div class="benefit">
+      <span>Quality guarantee</span>
+      <small>Built to last</small>
+    </div>
+    <div class="benefit">
+      <span>Secure checkout</span>
+      <small>Encrypted and safe</small>
+    </div>
+  </section>
 
-    <a
-      href="vacuum/"
-      class="hero-button"
-    >
-      Shop Featured Product
-    </a>
-
-  </div>
-
-</section>
-
-<!-- FEATURED -->
-
-<section class="featured">
-
-  <div class="featured-media">
-
-    <img
-      src="assets/image1.jpg"
-      alt="Wireless High-Power Car Vacuum Cleaner"
-    >
-
-  </div>
-
-  <div class="featured-content">
-
-    <div class="featured-label">
-      FEATURED PRODUCT
+  <section class="section" id="collections">
+    <div class="section-heading">
+      <h2>Shop by Collection</h2>
+      <a href="#watches">View all</a>
     </div>
 
-    <div class="featured-title">
-      Wireless High-Power Car Vacuum Cleaner
+    <div class="collection-grid">
+      <a href="#watches" class="collection-card">
+        <img src="assets/breil1.jpg" alt="Watches">
+        <div>
+          <h3>Watches</h3>
+          <p>Timeless design.</p>
+        </div>
+        <span>&rarr;</span>
+      </a>
+
+      <a href="#tech" class="collection-card">
+        <img src="assets/magnetic-charger-1.jpg" alt="Tech accessories">
+        <div>
+          <h3>Tech Accessories</h3>
+          <p>Power in your pocket.</p>
+        </div>
+        <span>&rarr;</span>
+      </a>
+
+      <a href="#tech" class="collection-card">
+        <img src="assets/cable1.jpg" alt="Cables and chargers">
+        <div>
+          <h3>Cables & Chargers</h3>
+          <p>Reliable. Fast. Durable.</p>
+        </div>
+        <span>&rarr;</span>
+      </a>
+
+      <a href="#car-care" class="collection-card">
+        <img src="assets/image1.jpg" alt="Car care essentials">
+        <div>
+          <h3>Car Care</h3>
+          <p>Clean wherever you go.</p>
+        </div>
+        <span>&rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="story-band">
+    <div class="story-card">
+      <span class="eyebrow">About NOVARA</span>
+      <h2>Minimal by choice. Meaningful by design.</h2>
+      <p>We select essentials that elevate your everyday routine without adding clutter.</p>
+      <a href="#collections" class="button button-gold">Our story</a>
+    </div>
+    <img src="assets/magnetic-charger-2.jpg" alt="NOVARA tech accessory detail">
+    <div class="mini-card watch-mini">
+      <h3>Precision in every detail.</h3>
+      <a href="#watches">Shop watches &rarr;</a>
+    </div>
+    <div class="mini-card travel-mini">
+      <h3>Carry less. Live more.</h3>
+      <a href="#tech">Shop tech &rarr;</a>
+    </div>
+  </section>
+
+  <section class="section product-section" id="watches">
+    <div class="section-heading">
+      <h2>Watches</h2>
+      <span>Elegant everyday timepieces.</span>
     </div>
 
-    <p>
-      Compact cordless cleaning for car, home and travel,
-      with wet and dry use in a simple handheld design.
-    </p>
-
-    <div class="featured-stock" data-stock-text data-product-id="vacuum">
-      Checking stock...
-    </div>
-
-    <a
-      href="vacuum/"
-      class="featured-button"
-    >
-      Shop Now
-    </a>
-
-  </div>
-
-</section>
-
-<!-- TECH -->
-
-<section class="category" id="tech">
-
-  <div class="category-title">
-    Tech Essentials
-  </div>
-
-  <div class="products">
-
-    <a href="vacuum/" class="card" data-product-id="vacuum">
-
-      <div class="card-image">
-        <img src="assets/image1.jpg" alt="Wireless High-Power Car Vacuum Cleaner">
-      </div>
-
-      <div class="card-content">
-
-        <div class="card-title">
-          Wireless High-Power Car Vacuum Cleaner
-        </div>
-
-        <div class="card-desc">
-          Powerful compact cleaner for car,
-          home and travel.
-        </div>
-
-        <div class="card-price">
-          24,99 €
-        </div>
-
-        <div class="card-stock" data-stock-text data-product-id="vacuum">
-          Checking stock...
-        </div>
-
-      </div>
-
-    </a>
-
-    <a href="magnetic-charger/" class="card" data-product-id="magnetic-charger">
-
-      <div class="card-image">
-        <img src="assets/magnetic-charger-1.jpg" alt="3 in 1 Magnetic Wireless Charger">
-      </div>
-
-      <div class="card-content">
-
-        <div class="card-title">
-          3 in 1 Magnetic Wireless Charger
-        </div>
-
-        <div class="card-desc">
-          Foldable 3-in-1 wireless charging
-          station for Apple devices.
-        </div>
-
-        <div class="card-price">
-          19,99 €
-        </div>
-
-        <div class="card-stock" data-stock-text data-product-id="magnetic-charger">
-          Checking stock...
-        </div>
-
-      </div>
-
-    </a>
-
-    <a href="cable/" class="card" data-product-id="cable">
-
-      <div class="card-image">
-        <img src="assets/cable1.jpg" alt="240W Fast Charging Cable">
-      </div>
-
-      <div class="card-content">
-
-        <div class="card-title">
-          240W Fast Charging Cable
-        </div>
-
-        <div class="card-desc">
-          Ultra fast charging cable with LED
-          display and premium braided build.
-        </div>
-
-        <div class="card-price">
-          8,99 €
-        </div>
-
-        <div class="card-stock" data-stock-text data-product-id="cable">
-          Checking stock...
-        </div>
-
-      </div>
-
-    </a>
-
-  </div>
-
-</section>
-
-<!-- WATCHES -->
-
-<section class="category" id="watches">
-
-  <div class="category-title">
-    Watches
-  </div>
-
-  <div class="products">
-
-    <a href="breil/" class="card" data-product-id="breil">
-
-      <div class="card-image">
+    <div class="product-grid">
+      <a href="breil/" class="product-card" data-product-id="breil">
         <img src="assets/breil1.jpg" alt="Breil Bow Shot Chronograph">
-      </div>
-
-      <div class="card-content">
-
-        <div class="card-title">
-          Breil Bow Shot Chronograph
+        <div class="product-info">
+          <h3>Breil Bow Shot Chronograph</h3>
+          <p>Gold sport chronograph with refined Italian styling.</p>
+          <strong>110 EUR</strong>
+          <span class="card-stock" data-stock-text data-product-id="breil">Checking stock...</span>
         </div>
+      </a>
 
-        <div class="card-desc">
-          Modern luxury timepiece with premium
-          minimalist design.
-        </div>
-
-        <div class="card-price">
-          110 €
-        </div>
-
-        <div class="card-stock" data-stock-text data-product-id="breil">
-          Checking stock...
-        </div>
-
-      </div>
-
-    </a>
-
-    <a href="fossil-privateer/" class="card" data-product-id="privateer">
-
-      <div class="card-image">
+      <a href="fossil-privateer/" class="product-card" data-product-id="privateer">
         <img src="assets/fossil-privateer-hero.jpg" alt="Fossil Privateer Chronograph">
-      </div>
-
-      <div class="card-content">
-
-        <div class="card-title">
-          Fossil Privateer Chronograph
+        <div class="product-info">
+          <h3>Fossil Privateer Chronograph</h3>
+          <p>Two-tone stainless steel chronograph with a black sunray dial.</p>
+          <strong>95 EUR</strong>
+          <span class="card-stock" data-stock-text data-product-id="privateer">Checking stock...</span>
         </div>
+      </a>
+    </div>
+  </section>
 
-        <div class="card-desc">
-          A bold Fossil chronograph featuring a black sunray dial, gold and silver stainless steel construction, and a modern sport-luxury aesthetic designed for everyday wear
+  <section class="section product-section" id="tech">
+    <div class="section-heading">
+      <h2>Tech Accessories</h2>
+      <span>Charging tools for daily use.</span>
+    </div>
+
+    <div class="product-grid">
+      <a href="magnetic-charger/" class="product-card" data-product-id="magnetic-charger">
+        <img src="assets/magnetic-charger-1.jpg" alt="3 in 1 Magnetic Wireless Charger">
+        <div class="product-info">
+          <h3>3 in 1 Magnetic Wireless Charger</h3>
+          <p>Foldable wireless charging station for Apple devices.</p>
+          <strong>19,99 EUR</strong>
+          <span class="card-stock" data-stock-text data-product-id="magnetic-charger">Checking stock...</span>
         </div>
+      </a>
 
-        <div class="card-price">
-          105 €
+      <a href="cable/" class="product-card" data-product-id="cable">
+        <img src="assets/cable1.jpg" alt="240W Fast Charging Cable">
+        <div class="product-info">
+          <h3>240W Fast Charging Cable</h3>
+          <p>Braided USB-C cable with LED power display.</p>
+          <strong>8,99 EUR</strong>
+          <span class="card-stock" data-stock-text data-product-id="cable">Checking stock...</span>
         </div>
+      </a>
+    </div>
+  </section>
 
-        <div class="card-stock" data-stock-text data-product-id="privateer">
-          Checking stock...
+  <section class="section product-section" id="car-care">
+    <div class="section-heading">
+      <h2>Car Care</h2>
+      <span>Compact cleaning for your car and home.</span>
+    </div>
+
+    <div class="product-grid product-grid-single">
+      <a href="vacuum/" class="product-card" data-product-id="vacuum">
+        <img src="assets/image1.jpg" alt="Wireless High-Power Car Vacuum Cleaner">
+        <div class="product-info">
+          <h3>Wireless High-Power Car Vacuum Cleaner</h3>
+          <p>Cordless wet and dry cleaning for cars, office, and home.</p>
+          <strong>24,99 EUR</strong>
+          <span class="card-stock" data-stock-text data-product-id="vacuum">Checking stock...</span>
         </div>
-
-      </div>
-
-    </a>
-
-  </div>
-
-</section>
-
-<!-- FOOTER -->
+      </a>
+    </div>
+  </section>
+</main>
 
 <footer class="site-footer">
-
-  © NOVARA — Modern Essentials
-
+  (c) NOVARA - Modern Essentials
 </footer>
 
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-<script src="js/storefront.js"></script>
+<script src="js/storefront.js?v=20260524"></script>
 
 </body>
 </html>

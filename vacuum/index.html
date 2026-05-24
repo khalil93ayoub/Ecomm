@@ -1,212 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-<title>NOVARA — Wireless High-Power Car Vacuum Cleaner</title>
+<title>NOVARA | Wireless High-Power Car Vacuum Cleaner</title>
 
 <link rel="stylesheet" href="../css/site.css">
-<link rel="stylesheet" href="../css/base.css">
-<link rel="stylesheet" href="../css/layout.css">
-<link rel="stylesheet" href="../css/components.css">
-<link rel="stylesheet" href="../css/tech-product.css">
-
-
+<link rel="stylesheet" href="../css/product.css">
 </head>
 
-<body class="product-vacuum" data-product-id="vacuum" data-stripe-url="https://buy.stripe.com/8x2bJ13E0ehYb5N6hxcIE00" data-video-src="../assets/product-video.mp4">
+<body data-product-id="vacuum" data-stripe-url="https://buy.stripe.com/8x2bJ13E0ehYb5N6hxcIE00" data-video-src="../assets/product-video.mp4">
 
-<!-- HEADER -->
+<div class="promo-bar">Free shipping on all orders over 50 EUR</div>
 
-<header>
+<header class="site-header">
+  <a href="../" class="brand-link" aria-label="NOVARA home">
+    <span class="brand-monogram">N</span>
+    <span>NOVARA</span>
+  </a>
 
-  <div class="logo-wrap">
+  <nav class="header-nav" aria-label="Store sections">
+    <a href="../#collections">Collections</a>
+    <a href="../#watches">Watches</a>
+    <a href="../#tech">Tech</a>
+    <a href="../#car-care">Car Care</a>
+  </nav>
 
-    <a href="../" class="logo-link">
-
-      <img
-        src="../assets/novara-icon.png"
-        class="logo"
-      >
-
-    </a>
-
-  </div>
-
-  <button id="buyBtnTop" class="top-btn">
-    Buy Now
-  </button>
-
+  <button id="buyBtnTop" class="top-btn">Buy Now</button>
 </header>
 
-<!-- PAGE -->
+<main class="page">
+  <section class="product-shell">
+    <div class="gallery-shell">
+      <div class="thumbs">
+      <button class="thumb active" type="button" onclick="showImage(this,'../assets/image1.jpg')">
+        <img src="../assets/image1.jpg" alt="Wireless High-Power Car Vacuum Cleaner thumbnail">
+      </button>
+      <button class="thumb" type="button" onclick="showImage(this,'../assets/image2.jpg')">
+        <img src="../assets/image2.jpg" alt="Wireless High-Power Car Vacuum Cleaner thumbnail">
+      </button>
+      <button class="thumb" type="button" onclick="showImage(this,'../assets/image3.jpg')">
+        <img src="../assets/image3.jpg" alt="Wireless High-Power Car Vacuum Cleaner thumbnail">
+      </button>
+      <button class="thumb" type="button" onclick="showImage(this,'../assets/image4.jpg')">
+        <img src="../assets/image4.jpg" alt="Wireless High-Power Car Vacuum Cleaner thumbnail">
+      </button>
+      <button class="thumb" type="button" onclick="showVideo(this)">
+        <video preload="metadata"><source src="../assets/product-video.mp4" type="video/mp4"></video>
+      </button>
+      </div>
 
-<div class="container">
-
-  <!-- MEDIA -->
-
-  <div class="media" id="mainMedia">
-
-    <div class="media-trigger" onclick="showVideo(this)">
-
-      <video
-        width="100%"
-        height="100%"
-        preload="metadata"
-      >
-
-        <source
-          src="../assets/product-video.mp4"
-          type="video/mp4"
-        >
-
-      </video>
-
-      <div class="play">▶</div>
-
+      <div class="media" id="mainMedia">
+        <span class="badge">Bestseller</span>
+        <img src="../assets/image1.jpg" alt="Wireless High-Power Car Vacuum Cleaner">
+      </div>
     </div>
 
-  </div>
+    <div class="product-panel">
+      <div class="breadcrumbs">Home / Car Care / Wireless High-Power Car Vacuum Cleaner</div>
+      <h1>Wireless High-Power Car Vacuum Cleaner</h1>
+      <div class="variant-line">Cordless / Wet & Dry</div>
+      <div class="price">24,99 EUR</div>
+      <div class="rating">Rated 4.8 <span>Customer favorite</span></div>
+      <p class="summary">Compact cordless cleaning for cars, office, and home with strong suction, reusable HEPA filtration, and USB charging.</p>
 
-  <!-- THUMBNAILS -->
+      <div class="feature-list">
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true"></span>
+          <div><strong>High-Power Suction</strong><span>Built for quick everyday cleaning.</span></div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true"></span>
+          <div><strong>Wet & Dry Use</strong><span>Handles dust, crumbs, and small spills.</span></div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true"></span>
+          <div><strong>Portable Design</strong><span>Easy to store in the car or home.</span></div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true"></span>
+          <div><strong>Reusable Filter</strong><span>Washable HEPA filter for repeated use.</span></div>
+        </div>
+      </div>
 
-  <div class="thumbs">
+      <div class="option-label">Option</div>
+      <div class="option-row">
+        <span class="option active">Black</span>
+      </div>
 
-    <img
-      class="thumb active"
-      src="../assets/video-thumb.jpg"
-      onclick="showVideo(this)"
-    >
+      <div id="stockText">Loading...</div>
 
-    <img
-      class="thumb"
-      src="../assets/image1.jpg"
-      onclick="showImage(this,'../assets/image1.jpg')"
-    >
-
-    <img
-      class="thumb"
-      src="../assets/image2.jpg"
-      onclick="showImage(this,'../assets/image2.jpg')"
-    >
-
-    <img
-      class="thumb"
-      src="../assets/image3.jpg"
-      onclick="showImage(this,'../assets/image3.jpg')"
-    >
-
-    <img
-      class="thumb"
-      src="../assets/image4.jpg"
-      onclick="showImage(this,'../assets/image4.jpg')"
-    >
-
-  </div>
-
-  <!-- CONTENT -->
-
-  <div class="panel">
-
-    <h1 class="product-title-main">
-      Wireless High-Power Car Vacuum Cleaner
-    </h1>
-
-    <div class="price">
-      24,99 €
+      <div class="checkout-row">
+        <button id="buyBtn" class="cta">Buy Now</button>
+        <div class="apple-pay">Secure checkout</div>
+      </div>
     </div>
+  </section>
 
-    <p class="subtitle">
-      Powerful cordless vacuum cleaner with dual wet & dry cleaning,
-      fast USB charging, reusable HEPA filter and compact portable design.
-      Perfect for cars, office and home cleaning.
-    </p>
+  <section class="benefits" aria-label="Store benefits">
+    <div class="benefit"><strong>Free shipping</strong><span>On orders over 50 EUR</span></div>
+    <div class="benefit"><strong>Easy returns</strong><span>30-day return policy</span></div>
+    <div class="benefit"><strong>Quality guarantee</strong><span>Checked before shipping</span></div>
+    <div class="benefit"><strong>Secure checkout</strong><span>Encrypted and safe</span></div>
+  </section>
 
-    <p id="stockText">
-      Loading...
-    </p>
-
-    <button id="buyBtn" class="cta">
-      Buy Now
-    </button>
-
-    <div class="info">
-      ✔ Secure payment<br>
-      ✔ Free delivery<br>
-      ✔ Tax included
+  <section class="details">
+    <div>
+      <h2>Description</h2>
+      <p>A practical handheld vacuum designed for fast cleaning in tight spaces. It is compact enough for the car and useful enough for desks, shelves, and home corners.</p>
+      <ul class="spec-list">
+        <li>Charging time: about 2 hours</li>
+<li>Power: 120W</li>
+<li>Usage: wet and dry</li>
+<li>Filter: washable HEPA</li>
+<li>Design: cordless handheld</li>
+      </ul>
     </div>
-
-    <div class="features">
-
-      <div class="feature">
-        ⚡ High-Power Suction
+    <div>
+      <h2>What's in the box</h2>
+      <div class="box-list">
+        <span>Vacuum cleaner</span>
+<span>Nozzle accessories</span>
+<span>USB charging cable</span>
+<span>Washable HEPA filter</span>
       </div>
-
-      <div class="feature">
-        🔋 USB Rechargeable
-      </div>
-
-      <div class="feature">
-        💨 Wet & Dry Dual Use
-      </div>
-
-      <div class="feature">
-        🧼 Washable HEPA Filter
-      </div>
-
-      <div class="feature">
-        🚗 Perfect For Cars & Home
-      </div>
-
-      <div class="feature">
-        🔇 Low Noise Operation
-      </div>
-
     </div>
+  </section>
 
-    <div class="specs">
-
-      <h2>Specifications</h2>
-
-      <div class="spec-row">
-        <span>Charging Time</span>
-        <span>~2 Hours</span>
-      </div>
-
-      <div class="spec-row">
-        <span>Usage</span>
-        <span>Wet & Dry</span>
-      </div>
-
-      <div class="spec-row">
-        <span>Power</span>
-        <span>120W</span>
-      </div>
-
-      <div class="spec-row">
-        <span>Design</span>
-        <span>Cordless Handheld</span>
-      </div>
-
-      <div class="spec-row">
-        <span>Filter</span>
-        <span>Washable HEPA</span>
-      </div>
-
+  <section class="related">
+    <h2>You may also like</h2>
+    <div class="related-grid">
+      <a class="related-card" href="../breil/">
+        <img src="../assets/breil1.jpg" alt="Breil Bow Shot">
+        <div><strong>Breil Bow Shot</strong><span>110 EUR</span></div>
+      </a>
+      <a class="related-card" href="../fossil-privateer/">
+        <img src="../assets/fossil-privateer-hero.jpg" alt="Fossil Privateer">
+        <div><strong>Fossil Privateer</strong><span>95 EUR</span></div>
+      </a>
+      <a class="related-card" href="../magnetic-charger/">
+        <img src="../assets/magnetic-charger-1.jpg" alt="3 in 1 Magnetic Charger">
+        <div><strong>3 in 1 Magnetic Charger</strong><span>19,99 EUR</span></div>
+      </a>
+      <a class="related-card" href="../cable/">
+        <img src="../assets/cable1.jpg" alt="240W Fast Charging Cable">
+        <div><strong>240W Fast Charging Cable</strong><span>8,99 EUR</span></div>
+      </a>
     </div>
+  </section>
+</main>
 
-  </div>
-
-</div>
-
-<!-- PRODUCT SCRIPTS -->
+<footer class="site-footer">(c) NOVARA - Modern Essentials</footer>
 
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-<script src="../js/storefront.js"></script>
+<script src="../js/storefront.js?v=20260524"></script>
 
 </body>
 </html>

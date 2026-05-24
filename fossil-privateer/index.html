@@ -7,180 +7,151 @@
 <title>NOVARA | Fossil Privateer Chronograph</title>
 
 <link rel="stylesheet" href="../css/site.css">
-<link rel="stylesheet" href="../css/watches.css">
-
+<link rel="stylesheet" href="../css/product.css">
 </head>
 
-<body data-product-id="privateer" data-stripe-url="https://buy.stripe.com/YOUR_STRIPE_LINK">
+<body data-product-id="privateer" data-stripe-url="https://buy.stripe.com/YOUR_STRIPE_LINK" data-video-src="">
 
-<header>
+<div class="promo-bar">Free shipping on all orders over 50 EUR</div>
 
-<a href="../" class="logo-link">
+<header class="site-header">
+  <a href="../" class="brand-link" aria-label="NOVARA home">
+    <span class="brand-monogram">N</span>
+    <span>NOVARA</span>
+  </a>
 
-  <img
-    src="../assets/novara-icon.png"
-    class="logo"
-  >
+  <nav class="header-nav" aria-label="Store sections">
+    <a href="../#collections">Collections</a>
+    <a href="../#watches">Watches</a>
+    <a href="../#tech">Tech</a>
+    <a href="../#car-care">Car Care</a>
+  </nav>
 
-</a>
-
-  <button id="buyBtnTop" class="top-btn">
-    Buy Now
-  </button>
-
+  <button id="buyBtnTop" class="top-btn">Buy Now</button>
 </header>
 
-<section class="hero">
+<main class="page">
+  <section class="product-shell">
+    <div class="gallery-shell">
+      <div class="thumbs">
+      <button class="thumb active" type="button" onclick="showImage(this,'../assets/fossil-privateer-hero.jpg')">
+        <img src="../assets/fossil-privateer-hero.jpg" alt="Fossil Privateer Chronograph thumbnail">
+      </button>
+      <button class="thumb" type="button" onclick="showImage(this,'../assets/privateer1.jpg')">
+        <img src="../assets/privateer1.jpg" alt="Fossil Privateer Chronograph thumbnail">
+      </button>
+      <button class="thumb" type="button" onclick="showImage(this,'../assets/privateer2.jpg')">
+        <img src="../assets/privateer2.jpg" alt="Fossil Privateer Chronograph thumbnail">
+      </button>
+      <button class="thumb" type="button" onclick="showImage(this,'../assets/privateer3.jpg')">
+        <img src="../assets/privateer3.jpg" alt="Fossil Privateer Chronograph thumbnail">
+      </button>
+      <button class="thumb" type="button" onclick="showImage(this,'../assets/privateer4.jpg')">
+        <img src="../assets/privateer4.jpg" alt="Fossil Privateer Chronograph thumbnail">
+      </button>
+      </div>
 
-  <img src="../assets/fossil-privateer-hero.jpg">
-
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-
-    <div class="hero-label">
-      MODERN TWO-TONE CHRONOGRAPH
+      <div class="media" id="mainMedia">
+        <span class="badge">Bestseller</span>
+        <img src="../assets/fossil-privateer-hero.jpg" alt="Fossil Privateer Chronograph">
+      </div>
     </div>
 
-    <div class="hero-title">
-      PRIVATEER
+    <div class="product-panel">
+      <div class="breadcrumbs">Home / Watches / Fossil Privateer Chronograph</div>
+      <h1>Fossil Privateer Chronograph</h1>
+      <div class="variant-line">Two-Tone Steel / Black Dial</div>
+      <div class="price">95 EUR</div>
+      <div class="rating">Rated 4.8 <span>Customer favorite</span></div>
+      <p class="summary">A two-tone stainless steel Fossil chronograph with a black sunray dial and strong everyday styling.</p>
+
+      <div class="feature-list">
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true"></span>
+          <div><strong>Quartz Chronograph</strong><span>Reliable timing for daily use.</span></div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true"></span>
+          <div><strong>Two-Tone Steel</strong><span>Gold and silver stainless steel finish.</span></div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true"></span>
+          <div><strong>5 ATM Water Resistance</strong><span>Built for splashes and daily exposure.</span></div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true"></span>
+          <div><strong>Black Sunray Dial</strong><span>Sport-luxury look with depth and contrast.</span></div>
+        </div>
+      </div>
+
+      <div class="option-label">Option</div>
+      <div class="option-row">
+        <span class="option active">Two-Tone Steel</span>
+<span class="option">Black Dial</span>
+      </div>
+
+      <div id="stockText">Loading...</div>
+
+      <div class="checkout-row">
+        <button id="buyBtn" class="cta">Buy Now</button>
+        <div class="apple-pay">Secure checkout</div>
+      </div>
     </div>
+  </section>
 
-    <div class="hero-sub">
-      A bold Fossil chronograph featuring a black
-      sunray dial, gold and silver stainless steel
-      construction, and a modern sport-luxury
-      aesthetic designed for everyday wear.
-    </div>
+  <section class="benefits" aria-label="Store benefits">
+    <div class="benefit"><strong>Free shipping</strong><span>On orders over 50 EUR</span></div>
+    <div class="benefit"><strong>Easy returns</strong><span>30-day return policy</span></div>
+    <div class="benefit"><strong>Quality guarantee</strong><span>Checked before shipping</span></div>
+    <div class="benefit"><strong>Secure checkout</strong><span>Encrypted and safe</span></div>
+  </section>
 
-  </div>
-
-</section>
-
-<section class="buy-card">
-
-  <div class="buy-grid">
-
+  <section class="details">
     <div>
-      <div class="buy-title">
-        Fossil Privateer Chronograph
+      <h2>Description</h2>
+      <p>The Privateer delivers a bold watch profile with a stainless steel case, chronograph movement, and a modern two-tone bracelet.</p>
+      <ul class="spec-list">
+        <li>Movement: quartz chronograph</li>
+<li>Case size: 45mm</li>
+<li>Case material: stainless steel</li>
+<li>Dial: black sunray</li>
+<li>Water resistance: 5 ATM</li>
+      </ul>
+    </div>
+    <div>
+      <h2>What's in the box</h2>
+      <div class="box-list">
+        <span>Fossil Privateer watch</span>
+<span>Watch box</span>
+<span>User manual</span>
       </div>
-
-      <div class="buy-desc">
-        Built with a durable 45mm stainless steel
-        case, quartz chronograph movement and
-        premium two-tone bracelet, the Privateer
-        delivers bold styling with reliable daily
-        performance.
-      </div>
     </div>
+  </section>
 
-    <div class="buy-right">
-      <div class="price">95€</div>
-      <div class="stock" id="stockText">Loading...</div>
-      <button id="buyBtn" class="cta">Buy Now</button>
+  <section class="related">
+    <h2>You may also like</h2>
+    <div class="related-grid">
+      <a class="related-card" href="../breil/">
+        <img src="../assets/breil1.jpg" alt="Breil Bow Shot">
+        <div><strong>Breil Bow Shot</strong><span>110 EUR</span></div>
+      </a>
+      <a class="related-card" href="../magnetic-charger/">
+        <img src="../assets/magnetic-charger-1.jpg" alt="3 in 1 Magnetic Charger">
+        <div><strong>3 in 1 Magnetic Charger</strong><span>19,99 EUR</span></div>
+      </a>
+      <a class="related-card" href="../cable/">
+        <img src="../assets/cable1.jpg" alt="240W Fast Charging Cable">
+        <div><strong>240W Fast Charging Cable</strong><span>8,99 EUR</span></div>
+      </a>
     </div>
+  </section>
+</main>
 
-  </div>
-
-</section>
-
-<section class="gallery">
-
-  <div class="section-title">
-    Details
-  </div>
-
-  <div class="gallery-grid">
-    <img src="../assets/privateer1.jpg">
-    <img src="../assets/privateer2.jpg">
-    <img src="../assets/privateer3.jpg">
-    <img src="../assets/privateer4.jpg">
-  </div>
-
-</section>
-
-<section class="features">
-
-  <div class="section-title">
-    Designed for Everyday Luxury
-  </div>
-
-  <div class="feature-grid">
-
-    <div class="feature">
-      <div class="feature-icon">⌚</div>
-      <h3>Quartz Chronograph</h3>
-      <p>
-        Accurate quartz chronograph movement
-        engineered for dependable everyday timing
-        functionality.
-      </p>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">✨</div>
-      <h3>Two-Tone Steel Finish</h3>
-      <p>
-        Premium stainless steel bracelet and case
-        finished in gold and silver tones for a
-        bold luxury-inspired appearance.
-      </p>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">🌊</div>
-      <h3>5 ATM Water Resistance</h3>
-      <p>
-        Built for everyday durability with reliable
-        resistance against splashes and daily water
-        exposure.
-      </p>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">🖤</div>
-      <h3>Black Sunray Dial</h3>
-      <p>
-        Deep black sunray dial with sporty
-        chronograph detailing and modern masculine
-        styling.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="specs">
-
-  <div class="section-title">
-    Specifications
-  </div>
-
-  <div class="spec-box">
-    <div class="spec-row"><span>Movement</span><span>Quartz Chronograph</span></div>
-    <div class="spec-row"><span>Case Size</span><span>45mm</span></div>
-    <div class="spec-row"><span>Case Material</span><span>Stainless Steel</span></div>
-    <div class="spec-row"><span>Case Color</span><span>Gold & Silver</span></div>
-    <div class="spec-row"><span>Dial</span><span>Black Sunray Chronograph</span></div>
-    <div class="spec-row"><span>Glass</span><span>Mineral Crystal</span></div>
-    <div class="spec-row"><span>Water Resistance</span><span>5 ATM</span></div>
-    <div class="spec-row"><span>Bracelet</span><span>Two-Tone Stainless Steel</span></div>
-    <div class="spec-row"><span>Bracelet Width</span><span>24mm</span></div>
-  </div>
-
-</section>
-
-<footer class="site-footer">
-
-  © NOVARA — Modern Essentials
-
-</footer>
+<footer class="site-footer">(c) NOVARA - Modern Essentials</footer>
 
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-<script src="../js/storefront.js"></script>
+<script src="../js/storefront.js?v=20260524"></script>
 
 </body>
 </html>

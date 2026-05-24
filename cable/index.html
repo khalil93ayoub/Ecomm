@@ -1,135 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-<title>NOVARA - Fast Cable</title>
+<title>NOVARA | 240W Fast Charging Cable</title>
 
 <link rel="stylesheet" href="../css/site.css">
-<link rel="stylesheet" href="../css/base.css">
-<link rel="stylesheet" href="../css/layout.css">
-<link rel="stylesheet" href="../css/components.css">
-<link rel="stylesheet" href="../css/tech-product.css">
-
-
+<link rel="stylesheet" href="../css/product.css">
 </head>
 
-<body class="product-cable" data-product-id="cable" data-stripe-url="https://buy.stripe.com/6oU4gzgqM1vc0r95dtcIE02" data-video-src="../assets/cable-video.mp4">
+<body data-product-id="cable" data-stripe-url="https://buy.stripe.com/6oU4gzgqM1vc0r95dtcIE02" data-video-src="../assets/cable-video.mp4">
 
-<!-- HEADER -->
+<div class="promo-bar">Free shipping on all orders over 50 EUR</div>
 
-<header>
+<header class="site-header">
+  <a href="../" class="brand-link" aria-label="NOVARA home">
+    <span class="brand-monogram">N</span>
+    <span>NOVARA</span>
+  </a>
 
-  <div class="logo-wrap">
+  <nav class="header-nav" aria-label="Store sections">
+    <a href="../#collections">Collections</a>
+    <a href="../#watches">Watches</a>
+    <a href="../#tech">Tech</a>
+    <a href="../#car-care">Car Care</a>
+  </nav>
 
-    <a href="../" class="logo-link">
-
-      <img
-        src="../assets/novara-icon.png"
-        class="logo"
-      >
-
-    </a>
-
-  </div>
-
-  <button id="buyBtnTop" class="top-btn">
-    Buy Now
-  </button>
-
+  <button id="buyBtnTop" class="top-btn">Buy Now</button>
 </header>
 
-<div class="container">
+<main class="page">
+  <section class="product-shell">
+    <div class="gallery-shell">
+      <div class="thumbs">
+      <button class="thumb active" type="button" onclick="showImage(this,'../assets/cable1.jpg')">
+        <img src="../assets/cable1.jpg" alt="240W Fast Charging Cable thumbnail">
+      </button>
+      <button class="thumb" type="button" onclick="showImage(this,'../assets/cable2.jpg')">
+        <img src="../assets/cable2.jpg" alt="240W Fast Charging Cable thumbnail">
+      </button>
+      <button class="thumb" type="button" onclick="showImage(this,'../assets/cable3.jpg')">
+        <img src="../assets/cable3.jpg" alt="240W Fast Charging Cable thumbnail">
+      </button>
+      <button class="thumb" type="button" onclick="showImage(this,'../assets/cable4.jpg')">
+        <img src="../assets/cable4.jpg" alt="240W Fast Charging Cable thumbnail">
+      </button>
+      <button class="thumb" type="button" onclick="showVideo(this)">
+        <video preload="metadata"><source src="../assets/cable-video.mp4" type="video/mp4"></video>
+      </button>
+      </div>
 
-  <div class="media" id="mainMedia">
-
-    <div class="media-trigger" onclick="showVideo(this)">
-
-      <video width="100%" height="100%" preload="metadata">
-        <source src="../assets/cable-video.mp4" type="video/mp4">
-      </video>
-
-      <div class="play">▶</div>
-
+      <div class="media" id="mainMedia">
+        <span class="badge">Bestseller</span>
+        <img src="../assets/cable1.jpg" alt="240W Fast Charging Cable">
+      </div>
     </div>
 
-  </div>
+    <div class="product-panel">
+      <div class="breadcrumbs">Home / Cables & Chargers / 240W Fast Charging Cable</div>
+      <h1>240W Fast Charging Cable</h1>
+      <div class="variant-line">USB-C / LED Display</div>
+      <div class="price">8,99 EUR</div>
+      <div class="rating">Rated 4.8 <span>Customer favorite</span></div>
+      <p class="summary">A durable braided USB-C cable with fast charging support and a clear LED power display.</p>
 
-  <div class="thumbs">
+      <div class="feature-list">
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true"></span>
+          <div><strong>240W Charging</strong><span>Built for high-power compatible devices.</span></div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true"></span>
+          <div><strong>LED Display</strong><span>Shows charging power in real time.</span></div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true"></span>
+          <div><strong>Braided Build</strong><span>Durable finish for daily use.</span></div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true"></span>
+          <div><strong>Wide Compatibility</strong><span>Works with phones, tablets, laptops, and more.</span></div>
+        </div>
+      </div>
 
-    <div class="thumb active" onclick="showVideo(this)">
-      <img src="../assets/cable-thumb.jpg">
+      <div class="option-label">Option</div>
+      <div class="option-row">
+        <span class="option active">Black</span>
+<span class="option">USB-C</span>
+      </div>
+
+      <div id="stockText">Loading...</div>
+
+      <div class="checkout-row">
+        <button id="buyBtn" class="cta">Buy Now</button>
+        <div class="apple-pay">Secure checkout</div>
+      </div>
     </div>
+  </section>
 
-    <div class="thumb" onclick="showImage(this,'../assets/cable1.jpg')">
-      <img src="../assets/cable1.jpg">
+  <section class="benefits" aria-label="Store benefits">
+    <div class="benefit"><strong>Free shipping</strong><span>On orders over 50 EUR</span></div>
+    <div class="benefit"><strong>Easy returns</strong><span>30-day return policy</span></div>
+    <div class="benefit"><strong>Quality guarantee</strong><span>Checked before shipping</span></div>
+    <div class="benefit"><strong>Secure checkout</strong><span>Encrypted and safe</span></div>
+  </section>
+
+  <section class="details">
+    <div>
+      <h2>Description</h2>
+      <p>A reliable daily charging cable for users who want speed, durability, and a visible power display in one compact accessory.</p>
+      <ul class="spec-list">
+        <li>Power: up to 240W</li>
+<li>Connector: USB-C</li>
+<li>Build: braided cable</li>
+<li>Display: LED power indicator</li>
+<li>Use: charging and data transfer</li>
+      </ul>
     </div>
-
-    <div class="thumb" onclick="showImage(this,'../assets/cable2.jpg')">
-      <img src="../assets/cable2.jpg">
+    <div>
+      <h2>What's in the box</h2>
+      <div class="box-list">
+        <span>240W charging cable</span>
+      </div>
     </div>
+  </section>
 
-    <div class="thumb" onclick="showImage(this,'../assets/cable3.jpg')">
-      <img src="../assets/cable3.jpg">
+  <section class="related">
+    <h2>You may also like</h2>
+    <div class="related-grid">
+      <a class="related-card" href="../breil/">
+        <img src="../assets/breil1.jpg" alt="Breil Bow Shot">
+        <div><strong>Breil Bow Shot</strong><span>110 EUR</span></div>
+      </a>
+      <a class="related-card" href="../fossil-privateer/">
+        <img src="../assets/fossil-privateer-hero.jpg" alt="Fossil Privateer">
+        <div><strong>Fossil Privateer</strong><span>95 EUR</span></div>
+      </a>
+      <a class="related-card" href="../magnetic-charger/">
+        <img src="../assets/magnetic-charger-1.jpg" alt="3 in 1 Magnetic Charger">
+        <div><strong>3 in 1 Magnetic Charger</strong><span>19,99 EUR</span></div>
+      </a>
     </div>
+  </section>
+</main>
 
-    <div class="thumb" onclick="showImage(this,'../assets/cable4.jpg')">
-      <img src="../assets/cable4.jpg">
-    </div>
-
-  </div>
-
-  <div class="panel">
-
-    <h1 class="product-title-main">
-      240W Fast Charging Cable
-    </h1>
-
-    <div class="price">
-      8,99 €
-    </div>
-
-    <div id="stockText">
-      Loading...
-    </div>
-
-    <button id="buyBtn" class="cta">
-      Buy Now
-    </button>
-
-    <div class="info">
-      ✔ 240W Super Fast Charging<br>
-      ✔ LED Power Display<br>
-      ✔ USB-C Multi Device Support<br>
-      ✔ Premium Braided Cable<br>
-      ✔ Fast Delivery
-    </div>
-
-    <div class="desc">
-      High-performance 240W charging cable designed for
-      ultra-fast charging and stable data transfer.
-
-      Compatible with smartphones, tablets, laptops,
-      gaming devices, printers, and more.
-
-      Features a premium braided design,
-      rotating elbow connector,
-      and integrated LED display for
-      real-time power monitoring.
-    </div>
-
-  </div>
-
-</div>
-
-<!-- PRODUCT SCRIPTS -->
+<footer class="site-footer">(c) NOVARA - Modern Essentials</footer>
 
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-<script src="../js/storefront.js"></script>
+<script src="../js/storefront.js?v=20260524"></script>
 
 </body>
 </html>
