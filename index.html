@@ -12,8 +12,12 @@
 
 <body>
 
-<div class="promo-bar" data-lang-de="Kostenloser Versand ab 50 EUR" data-lang-en="Free shipping on all orders over 50 EUR">
-  Kostenloser Versand ab 50 EUR
+<div class="promo-bar" aria-label="Shop-Vorteile" data-lang-aria-label-de="Shop-Vorteile" data-lang-aria-label-en="Store benefits">
+  <span data-lang-de="★★★★★ 4,9/5 (5.000+ Bewertungen)" data-lang-en="★★★★★ 4.9/5 (5,000+ Reviews)">★★★★★ 4,9/5 (5.000+ Bewertungen)</span>
+  <span data-lang-de="Kostenloser Versand ab 50 EUR" data-lang-en="Free shipping over 50 EUR">Kostenloser Versand ab 50 EUR</span>
+  <span data-lang-de="30 Tage Rückgabe" data-lang-en="30-day returns">30 Tage Rückgabe</span>
+  <span data-lang-de="Sicherer Checkout" data-lang-en="Secure checkout">Sicherer Checkout</span>
+  <span data-lang-de="24/7 Support" data-lang-en="24/7 Support">24/7 Support</span>
 </div>
 
 <header class="site-header">
@@ -25,10 +29,11 @@
   </a>
 
   <nav class="header-nav" aria-label="Shop-Bereiche" data-lang-aria-label-de="Shop-Bereiche" data-lang-aria-label-en="Store sections">
-    <a href="#collections" data-lang-de="Kollektionen" data-lang-en="Collections">Kollektionen</a>
-    <a href="#watches" data-lang-de="Uhren" data-lang-en="Watches">Uhren</a>
-    <a href="#tech" data-lang-de="Technik" data-lang-en="Tech">Technik</a>
-    <a href="#car-care" data-lang-de="Autopflege" data-lang-en="Car Care">Autopflege</a>
+    <a href="#top" data-lang-de="Home" data-lang-en="Home">Home</a>
+    <a href="#collections" data-lang-de="Shop" data-lang-en="Shop">Shop</a>
+    <a href="#best-sellers" data-lang-de="Bestseller" data-lang-en="Best Sellers">Bestseller</a>
+    <a href="#story" data-lang-de="Über uns" data-lang-en="About">Über uns</a>
+    <a href="#reviews" data-lang-de="Support" data-lang-en="Support">Support</a>
   </nav>
 
   <div class="header-tools">
@@ -41,179 +46,180 @@
   </div>
 </header>
 
-<main>
+<main id="top">
   <section class="hero">
     <div class="hero-copy">
       <span class="eyebrow" data-lang-de="Moderne Essentials" data-lang-en="Modern essentials">Moderne Essentials</span>
-      <h1 data-lang-html-de="Entworfen für <span>Bewegung.</span>" data-lang-html-en="Designed for <span>movement.</span>">Entworfen für <span>Bewegung.</span></h1>
-      <p data-lang-de="Premium-Essentials für jeden Tag mit klarem Design, praktischer Funktion, Live-Bestand und sicherem Checkout." data-lang-en="Premium everyday essentials with clean design, practical function, live stock, and secure checkout.">Premium-Essentials für jeden Tag mit klarem Design, praktischer Funktion, Live-Bestand und sicherem Checkout.</p>
+      <h1 data-lang-html-de="Entworfen für <span>jeden Tag.</span>" data-lang-html-en="Designed for <span>everyday life.</span>">Entworfen für <span>jeden Tag.</span></h1>
+      <p data-lang-de="Premium-Qualität. Zeitloser Stil. Ausgewählt, um deinen Alltag einfacher zu machen." data-lang-en="Premium quality. Timeless style. Selected to make everyday life easier.">Premium-Qualität. Zeitloser Stil. Ausgewählt, um deinen Alltag einfacher zu machen.</p>
       <div class="hero-actions">
-        <a href="#collections" class="button button-dark" data-lang-de="Kollektion shoppen" data-lang-en="Shop collection">Kollektion shoppen</a>
-        <a href="#watches" class="button button-link" data-lang-de="Bestseller ansehen" data-lang-en="Explore bestsellers">Bestseller ansehen</a>
+        <a href="#collections" class="button button-dark" data-lang-de="Jetzt shoppen" data-lang-en="Shop now">Jetzt shoppen</a>
+        <a href="#best-sellers" class="button button-link" data-lang-de="Bestseller" data-lang-en="Best sellers">Bestseller</a>
+      </div>
+      <div class="hero-proof" aria-label="Kundenvertrauen" data-lang-aria-label-de="Kundenvertrauen" data-lang-aria-label-en="Customer trust">
+        <span>A</span><span>N</span><span>K</span>
+        <strong data-lang-de="Vertraut von 5.000+ zufriedenen Kunden" data-lang-en="Trusted by 5,000+ happy customers">Vertraut von 5.000+ zufriedenen Kunden</strong>
       </div>
     </div>
 
     <div class="hero-media">
-      <img src="assets/fossil-privateer-hero.jpg" alt="NOVARA Uhr auf Steinoberfläche" data-lang-alt-de="NOVARA Uhr auf Steinoberfläche" data-lang-alt-en="NOVARA watch on stone surface">
+      <img src="assets/breil-hero.jpg" alt="NOVARA Uhr" data-lang-alt-de="NOVARA Uhr" data-lang-alt-en="NOVARA watch">
+    </div>
+  </section>
+
+  <section class="section" id="collections">
+    <div class="section-heading section-heading-centered">
+      <h2 data-lang-de="Shop by Collection" data-lang-en="Shop by Collection">Shop by Collection</h2>
+    </div>
+
+    <div class="collection-grid">
+      <a href="#best-sellers" class="collection-card">
+        <img src="assets/breil1.jpg" alt="Watches" data-lang-alt-de="Watches" data-lang-alt-en="Watches">
+        <div>
+          <h3 data-lang-de="Watches" data-lang-en="Watches">Watches</h3>
+          <p data-lang-de="Explore" data-lang-en="Explore">Explore</p>
+        </div>
+        <span>&rarr;</span>
+      </a>
+
+      <a href="#best-sellers" class="collection-card">
+        <img src="assets/magnetic-charger-1.jpg" alt="Tech" data-lang-alt-de="Tech" data-lang-alt-en="Tech">
+        <div>
+          <h3 data-lang-de="Tech" data-lang-en="Tech">Tech</h3>
+          <p data-lang-de="Explore" data-lang-en="Explore">Explore</p>
+        </div>
+        <span>&rarr;</span>
+      </a>
+
+      <a href="#best-sellers" class="collection-card">
+        <img src="assets/image1.jpg" alt="Car Accessories" data-lang-alt-de="Car Accessories" data-lang-alt-en="Car Accessories">
+        <div>
+          <h3 data-lang-de="Car Accessories" data-lang-en="Car Accessories">Car Accessories</h3>
+          <p data-lang-de="Explore" data-lang-en="Explore">Explore</p>
+        </div>
+        <span>&rarr;</span>
+      </a>
+
+      <a href="#best-sellers" class="collection-card">
+        <img src="assets/cable1.jpg" alt="Chargers" data-lang-alt-de="Chargers" data-lang-alt-en="Chargers">
+        <div>
+          <h3 data-lang-de="Chargers" data-lang-en="Chargers">Chargers</h3>
+          <p data-lang-de="Explore" data-lang-en="Explore">Explore</p>
+        </div>
+        <span>&rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section product-section" id="best-sellers">
+    <div class="section-heading">
+      <h2 data-lang-de="Bestseller" data-lang-en="Best Sellers">Bestseller</h2>
+      <a href="#collections" data-lang-de="Alle ansehen" data-lang-en="View all">Alle ansehen</a>
+    </div>
+
+    <div class="product-grid best-seller-grid">
+      <a href="vacuum/" class="product-card" data-product-id="vacuum">
+        <span class="product-badge" data-lang-de="Bestseller" data-lang-en="Best seller">Bestseller</span>
+        <img src="assets/image4.jpg" alt="Kabelloser Hochleistungs-Autostaubsauger" data-lang-alt-de="Kabelloser Hochleistungs-Autostaubsauger" data-lang-alt-en="Wireless High-Power Car Vacuum Cleaner">
+        <div class="product-info">
+          <span class="product-rating">★★★★★ (124)</span>
+          <h3 data-lang-de="Kabelloser Hochleistungs-Autostaubsauger" data-lang-en="Wireless Car Vacuum">Kabelloser Hochleistungs-Autostaubsauger</h3>
+          <strong>24,99 EUR</strong>
+          <span class="card-stock" data-stock-text data-product-id="vacuum">Bestand wird geprüft...</span>
+          <span class="product-card-button" data-lang-de="Zum Produkt" data-lang-en="View product">Zum Produkt</span>
+        </div>
+      </a>
+
+      <a href="breil/" class="product-card is-sold-out" data-product-id="breil">
+        <span class="product-badge" data-lang-de="Ausverkauft" data-lang-en="Sold out">Ausverkauft</span>
+        <img src="assets/breil1.jpg" alt="Breil Bow Shot Chronograph">
+        <div class="product-info">
+          <span class="product-rating">★★★★★ (98)</span>
+          <h3>Breil Bow Shot Chronograph</h3>
+          <strong>110 EUR</strong>
+          <span class="card-stock stock-out" data-stock-text data-product-id="breil">Ausverkauft</span>
+          <span class="product-card-button is-disabled" data-lang-de="Ausverkauft" data-lang-en="Sold out">Ausverkauft</span>
+        </div>
+      </a>
+
+      <a href="fossil-privateer/" class="product-card" data-product-id="privateer">
+        <span class="product-badge" data-lang-de="Bestseller" data-lang-en="Best seller">Bestseller</span>
+        <img src="assets/fossil-privateer-hero.jpg" alt="Fossil Privateer Chronograph">
+        <div class="product-info">
+          <span class="product-rating">★★★★★ (96)</span>
+          <h3>Fossil Privateer Chronograph</h3>
+          <strong>95 EUR</strong>
+          <span class="card-stock" data-stock-text data-product-id="privateer">Bestand wird geprüft...</span>
+          <span class="product-card-button" data-lang-de="Zum Produkt" data-lang-en="View product">Zum Produkt</span>
+        </div>
+      </a>
+
+      <a href="magnetic-charger/" class="product-card" data-product-id="magnetic-charger">
+        <span class="product-badge" data-lang-de="Bestseller" data-lang-en="Best seller">Bestseller</span>
+        <img src="assets/magnetic-charger-1.jpg" alt="3-in-1 magnetisches kabelloses Ladegerät" data-lang-alt-de="3-in-1 magnetisches kabelloses Ladegerät" data-lang-alt-en="3 in 1 Magnetic Wireless Charger">
+        <div class="product-info">
+          <span class="product-rating">★★★★★ (156)</span>
+          <h3 data-lang-de="3-in-1 magnetisches kabelloses Ladegerät" data-lang-en="3 in 1 Magnetic Wireless Charger">3-in-1 magnetisches kabelloses Ladegerät</h3>
+          <strong>19,99 EUR</strong>
+          <span class="card-stock" data-stock-text data-product-id="magnetic-charger">Bestand wird geprüft...</span>
+          <span class="product-card-button" data-lang-de="Zum Produkt" data-lang-en="View product">Zum Produkt</span>
+        </div>
+      </a>
     </div>
   </section>
 
   <section class="benefits" aria-label="Shop-Vorteile" data-lang-aria-label-de="Shop-Vorteile" data-lang-aria-label-en="Store benefits">
     <div class="benefit">
-      <span data-lang-de="Kostenloser Versand" data-lang-en="Free shipping">Kostenloser Versand</span>
-      <small data-lang-de="Ab 50 EUR Bestellwert" data-lang-en="On orders over 50 EUR">Ab 50 EUR Bestellwert</small>
+      <span data-lang-de="Schneller Versand" data-lang-en="Fast shipping">Schneller Versand</span>
+      <small data-lang-de="Ab 50 EUR kostenlos" data-lang-en="Free over 50 EUR">Ab 50 EUR kostenlos</small>
     </div>
     <div class="benefit">
-      <span data-lang-de="Einfache Rückgabe" data-lang-en="Easy returns">Einfache Rückgabe</span>
-      <small data-lang-de="30 Tage Rückgaberecht" data-lang-en="30 day return policy">30 Tage Rückgaberecht</small>
+      <span data-lang-de="Premium-Qualität" data-lang-en="Premium quality">Premium-Qualität</span>
+      <small data-lang-de="Sorgfältig ausgewählt" data-lang-en="Carefully selected">Sorgfältig ausgewählt</small>
     </div>
     <div class="benefit">
-      <span data-lang-de="Qualitätsgarantie" data-lang-en="Quality guarantee">Qualitätsgarantie</span>
-      <small data-lang-de="Langlebig ausgewählt" data-lang-en="Built to last">Langlebig ausgewählt</small>
+      <span data-lang-de="30 Tage Rückgabe" data-lang-en="30-day returns">30 Tage Rückgabe</span>
+      <small data-lang-de="Stressfrei" data-lang-en="Hassle-free">Stressfrei</small>
     </div>
     <div class="benefit">
-      <span data-lang-de="Sicherer Checkout" data-lang-en="Secure checkout">Sicherer Checkout</span>
-      <small data-lang-de="Verschlüsselt und sicher" data-lang-en="Encrypted and safe">Verschlüsselt und sicher</small>
+      <span data-lang-de="Sicher bezahlen" data-lang-en="Secure payment">Sicher bezahlen</span>
+      <small data-lang-de="100% sicherer Checkout" data-lang-en="100% secure checkout">100% sicherer Checkout</small>
     </div>
   </section>
 
-  <section class="section" id="collections">
-    <div class="section-heading">
-      <h2 data-lang-de="Nach Kollektion shoppen" data-lang-en="Shop by Collection">Nach Kollektion shoppen</h2>
-      <a href="#watches" data-lang-de="Alle ansehen" data-lang-en="View all">Alle ansehen</a>
-    </div>
-
-    <div class="collection-grid">
-      <a href="#watches" class="collection-card">
-        <img src="assets/breil1.jpg" alt="Uhren" data-lang-alt-de="Uhren" data-lang-alt-en="Watches">
-        <div>
-          <h3 data-lang-de="Uhren" data-lang-en="Watches">Uhren</h3>
-          <p data-lang-de="Zeitloses Design." data-lang-en="Timeless design.">Zeitloses Design.</p>
-        </div>
-        <span>&rarr;</span>
-      </a>
-
-      <a href="#tech" class="collection-card">
-        <img src="assets/magnetic-charger-1.jpg" alt="Technik-Zubehör" data-lang-alt-de="Technik-Zubehör" data-lang-alt-en="Tech accessories">
-        <div>
-          <h3 data-lang-de="Technik-Zubehör" data-lang-en="Tech Accessories">Technik-Zubehör</h3>
-          <p data-lang-de="Power für unterwegs." data-lang-en="Power in your pocket.">Power für unterwegs.</p>
-        </div>
-        <span>&rarr;</span>
-      </a>
-
-      <a href="#tech" class="collection-card">
-        <img src="assets/cable1.jpg" alt="Kabel und Ladegeräte" data-lang-alt-de="Kabel und Ladegeräte" data-lang-alt-en="Cables and chargers">
-        <div>
-          <h3 data-lang-de="Kabel & Ladegeräte" data-lang-en="Cables & Chargers">Kabel & Ladegeräte</h3>
-          <p data-lang-de="Zuverlässig. Schnell. Robust." data-lang-en="Reliable. Fast. Durable.">Zuverlässig. Schnell. Robust.</p>
-        </div>
-        <span>&rarr;</span>
-      </a>
-
-      <a href="#car-care" class="collection-card">
-        <img src="assets/image1.jpg" alt="Autopflege-Essentials" data-lang-alt-de="Autopflege-Essentials" data-lang-alt-en="Car care essentials">
-        <div>
-          <h3 data-lang-de="Autopflege" data-lang-en="Car Care">Autopflege</h3>
-          <p data-lang-de="Sauber, wohin du gehst." data-lang-en="Clean wherever you go.">Sauber, wohin du gehst.</p>
-        </div>
-        <span>&rarr;</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="story-band">
+  <section class="story-band" id="story">
     <div class="story-card">
-      <span class="eyebrow" data-lang-de="Über NOVARA" data-lang-en="About NOVARA">Über NOVARA</span>
-      <h2 data-lang-de="Minimal aus Prinzip. Sinnvoll im Design." data-lang-en="Minimal by choice. Meaningful by design.">Minimal aus Prinzip. Sinnvoll im Design.</h2>
-      <p data-lang-de="Wir wählen Essentials aus, die deinen Alltag aufwerten, ohne ihn zu überladen." data-lang-en="We select essentials that elevate your everyday routine without adding clutter.">Wir wählen Essentials aus, die deinen Alltag aufwerten, ohne ihn zu überladen.</p>
-      <a href="#collections" class="button button-gold" data-lang-de="Unsere Geschichte" data-lang-en="Our story">Unsere Geschichte</a>
+      <span class="eyebrow" data-lang-de="Gebaut für modernes Leben" data-lang-en="Built for modern life">Gebaut für modernes Leben</span>
+      <h2 data-lang-de="Qualitätsprodukte, die einen Unterschied machen." data-lang-en="Quality products that make a difference.">Qualitätsprodukte, die einen Unterschied machen.</h2>
+      <p data-lang-de="Bei NOVARA setzen wir auf funktionales Design, ausgewählte Materialien und Produkte, die deinen Alltag verbessern." data-lang-en="At NOVARA, we focus on functional design, selected materials, and products that improve your everyday life.">Bei NOVARA setzen wir auf funktionales Design, ausgewählte Materialien und Produkte, die deinen Alltag verbessern.</p>
+      <a href="#collections" class="button button-gold" data-lang-de="Jetzt shoppen" data-lang-en="Shop now">Jetzt shoppen</a>
     </div>
-    <img src="assets/magnetic-charger-2.jpg" alt="NOVARA Technik-Detail" data-lang-alt-de="NOVARA Technik-Detail" data-lang-alt-en="NOVARA tech accessory detail">
-    <div class="mini-card watch-mini">
-      <h3 data-lang-de="Präzision in jedem Detail." data-lang-en="Precision in every detail.">Präzision in jedem Detail.</h3>
-      <a href="#watches" data-lang-de="Uhren shoppen →" data-lang-en="Shop watches →">Uhren shoppen →</a>
-    </div>
-    <div class="mini-card travel-mini">
-      <h3 data-lang-de="Weniger tragen. Mehr erleben." data-lang-en="Carry less. Live more.">Weniger tragen. Mehr erleben.</h3>
-      <a href="#tech" data-lang-de="Technik shoppen →" data-lang-en="Shop tech →">Technik shoppen →</a>
-    </div>
+    <img src="assets/breil-hero.jpg" alt="NOVARA Uhr am Handgelenk" data-lang-alt-de="NOVARA Uhr am Handgelenk" data-lang-alt-en="NOVARA watch on wrist">
+    <img src="assets/image2.jpg" alt="NOVARA Autopflege" data-lang-alt-de="NOVARA Autopflege" data-lang-alt-en="NOVARA car care">
+    <img src="assets/magnetic-charger-2.jpg" alt="NOVARA Ladegerät" data-lang-alt-de="NOVARA Ladegerät" data-lang-alt-en="NOVARA charger">
   </section>
 
-  <section class="section product-section" id="watches">
+  <section class="section reviews-section" id="reviews">
     <div class="section-heading">
-      <h2 data-lang-de="Uhren" data-lang-en="Watches">Uhren</h2>
-      <span data-lang-de="Elegante Zeitmesser für jeden Tag." data-lang-en="Elegant everyday timepieces.">Elegante Zeitmesser für jeden Tag.</span>
+      <h2 data-lang-de="Was unsere Kunden sagen" data-lang-en="What our customers say">Was unsere Kunden sagen</h2>
+      <a href="#top" data-lang-de="Alle ansehen" data-lang-en="View all">Alle ansehen</a>
     </div>
-
-    <div class="product-grid">
-      <a href="breil/" class="product-card" data-product-id="breil">
-        <img src="assets/breil1.jpg" alt="Breil Bow Shot Chronograph">
-        <div class="product-info">
-          <h3>Breil Bow Shot Chronograph</h3>
-          <p data-lang-de="Goldfarbener Sport-Chronograph mit feinem italienischem Styling." data-lang-en="Gold sport chronograph with refined Italian styling.">Goldfarbener Sport-Chronograph mit feinem italienischem Styling.</p>
-          <strong>110 EUR</strong>
-          <span class="card-stock" data-stock-text data-product-id="breil">Bestand wird geprüft...</span>
-        </div>
-      </a>
-
-      <a href="fossil-privateer/" class="product-card" data-product-id="privateer">
-        <img src="assets/fossil-privateer-hero.jpg" alt="Fossil Privateer Chronograph">
-        <div class="product-info">
-          <h3>Fossil Privateer Chronograph</h3>
-          <p data-lang-de="Zweifarbiger Edelstahl-Chronograph mit schwarzem Sunray-Zifferblatt." data-lang-en="Two-tone stainless steel chronograph with a black sunray dial.">Zweifarbiger Edelstahl-Chronograph mit schwarzem Sunray-Zifferblatt.</p>
-          <strong>95 EUR</strong>
-          <span class="card-stock" data-stock-text data-product-id="privateer">Bestand wird geprüft...</span>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <section class="section product-section" id="tech">
-    <div class="section-heading">
-      <h2 data-lang-de="Technik-Zubehör" data-lang-en="Tech Accessories">Technik-Zubehör</h2>
-      <span data-lang-de="Lade-Tools für den Alltag." data-lang-en="Charging tools for daily use.">Lade-Tools für den Alltag.</span>
-    </div>
-
-    <div class="product-grid">
-      <a href="magnetic-charger/" class="product-card" data-product-id="magnetic-charger">
-        <img src="assets/magnetic-charger-1.jpg" alt="3-in-1 magnetisches kabelloses Ladegerät" data-lang-alt-de="3-in-1 magnetisches kabelloses Ladegerät" data-lang-alt-en="3 in 1 Magnetic Wireless Charger">
-        <div class="product-info">
-          <h3 data-lang-de="3-in-1 magnetisches kabelloses Ladegerät" data-lang-en="3 in 1 Magnetic Wireless Charger">3-in-1 magnetisches kabelloses Ladegerät</h3>
-          <p data-lang-de="Faltbare kabellose Ladestation für Apple-Geräte." data-lang-en="Foldable wireless charging station for Apple devices.">Faltbare kabellose Ladestation für Apple-Geräte.</p>
-          <strong>19,99 EUR</strong>
-          <span class="card-stock" data-stock-text data-product-id="magnetic-charger">Bestand wird geprüft...</span>
-        </div>
-      </a>
-
-      <a href="cable/" class="product-card" data-product-id="cable">
-        <img src="assets/cable1.jpg" alt="240W Schnellladekabel" data-lang-alt-de="240W Schnellladekabel" data-lang-alt-en="240W Fast Charging Cable">
-        <div class="product-info">
-          <h3 data-lang-de="240W Schnellladekabel" data-lang-en="240W Fast Charging Cable">240W Schnellladekabel</h3>
-          <p data-lang-de="Geflochtenes USB-C-Kabel mit LED-Leistungsanzeige." data-lang-en="Braided USB-C cable with LED power display.">Geflochtenes USB-C-Kabel mit LED-Leistungsanzeige.</p>
-          <strong>8,99 EUR</strong>
-          <span class="card-stock" data-stock-text data-product-id="cable">Bestand wird geprüft...</span>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <section class="section product-section" id="car-care">
-    <div class="section-heading">
-      <h2 data-lang-de="Autopflege" data-lang-en="Car Care">Autopflege</h2>
-      <span data-lang-de="Kompakte Reinigung für Auto und Zuhause." data-lang-en="Compact cleaning for your car and home.">Kompakte Reinigung für Auto und Zuhause.</span>
-    </div>
-
-    <div class="product-grid product-grid-single">
-      <a href="vacuum/" class="product-card" data-product-id="vacuum">
-        <img src="assets/image1.jpg" alt="Kabelloser Hochleistungs-Autostaubsauger" data-lang-alt-de="Kabelloser Hochleistungs-Autostaubsauger" data-lang-alt-en="Wireless High-Power Car Vacuum Cleaner">
-        <div class="product-info">
-          <h3 data-lang-de="Kabelloser Hochleistungs-Autostaubsauger" data-lang-en="Wireless High-Power Car Vacuum Cleaner">Kabelloser Hochleistungs-Autostaubsauger</h3>
-          <p data-lang-de="Kabellose Nass- und Trockenreinigung für Auto, Büro und Zuhause." data-lang-en="Cordless wet and dry cleaning for cars, office, and home.">Kabellose Nass- und Trockenreinigung für Auto, Büro und Zuhause.</p>
-          <strong>24,99 EUR</strong>
-          <span class="card-stock" data-stock-text data-product-id="vacuum">Bestand wird geprüft...</span>
-        </div>
-      </a>
+    <div class="review-grid">
+      <article class="review-card">
+        <span>★★★★★</span>
+        <p data-lang-de="Schnelle Lieferung und die Produktseite war sehr klar." data-lang-en="Fast delivery and the product page was very clear.">Schnelle Lieferung und die Produktseite war sehr klar.</p>
+        <strong>M. Schneider</strong>
+      </article>
+      <article class="review-card">
+        <span>★★★★★</span>
+        <p data-lang-de="Der Staubsauger ist kompakt und perfekt fürs Auto." data-lang-en="The vacuum is compact and perfect for the car.">Der Staubsauger ist kompakt und perfekt fürs Auto.</p>
+        <strong>L. Bauer</strong>
+      </article>
+      <article class="review-card">
+        <span>★★★★★</span>
+        <p data-lang-de="Schöne Auswahl, einfacher Checkout und guter Eindruck." data-lang-en="Nice selection, simple checkout, and a trustworthy feel.">Schöne Auswahl, einfacher Checkout und guter Eindruck.</p>
+        <strong>A. Weber</strong>
+      </article>
     </div>
   </section>
 </main>

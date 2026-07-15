@@ -15,6 +15,7 @@
     cable: ["fast-cable", "fast_cable", "charging-cable"],
     vacuum: ["vacuum-cleaner", "car-vacuum", "car_vacuum"]
   };
+  const soldOutOverrides = new Set(["breil", "braille"]);
 
   const messages = {
     de: {
@@ -217,8 +218,32 @@
     }
   }
 
+  function isSoldOutOverrideTarget(target){
+    const id = target.dataset.productId || productId;
+    return soldOutOverrides.has(id);
+  }
+
+  function applySoldOutOverride(target){
+    const id = target.dataset.productId || productId;
+    renderStock(target, 0, { collection: "manual", id });
+
+    if(target.id === "stockText"){
+      setBuyButtonState(0);
+    }
+  }
+
+  stockTargets
+    .filter(isSoldOutOverrideTarget)
+    .forEach(applySoldOutOverride);
+
+  const liveStockTargets = stockTargets.filter(target => !isSoldOutOverrideTarget(target));
+
+  if(liveStockTargets.length === 0){
+    return;
+  }
+
   if(!window.firebase){
-    stockTargets.forEach(target => {
+    liveStockTargets.forEach(target => {
       target.innerText = message("stockUnavailable");
       target.classList.add("stock-error");
       target.title = message("stockUnavailableTitle");
@@ -303,6 +328,16 @@
       return;
     }
 
+    if(soldOutOverrides.has(id)){
+      renderStock(target, 0, { collection: "manual", id });
+
+      if(target.id === "stockText"){
+        setBuyButtonState(0);
+      }
+
+      return;
+    }
+
     const refs = stockRefsFor(id);
     const states = new Map(refs.map(item => [`${item.collection}/${item.id}`, null]));
     const sourceByKey = new Map(refs.map(item => [`${item.collection}/${item.id}`, item]));
@@ -347,6 +382,10 @@
   }
 
   async function getProductStock(id){
+    if(soldOutOverrides.has(id)){
+      return 0;
+    }
+
     for(const item of stockRefsFor(id)){
       const doc = await item.ref.get();
 
@@ -392,6 +431,6 @@
     button.addEventListener("click", handleBuy);
   });
 
-  stockTargets.forEach(bindStockTarget);
+  liveStockTargets.forEach(bindStockTarget);
 
 })();
