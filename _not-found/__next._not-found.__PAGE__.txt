@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[484,[],"OutletBoundary"]
+3:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","section",null,{"className":"novara-section","children":["$","div",null,{"className":"novara-container","children":[["$","div",null,{"className":"max-w-2xl","children":[["$","p",null,{"className":"mb-3 text-xs font-semibold uppercase tracking-wide text-novara-gold","children":"NOVARA"}],["$","h1",null,{"className":"text-3xl font-semibold md:text-5xl","children":"Page not found"}],["$","p",null,{"className":"mt-4 text-novara-muted","children":"The requested route does not exist."}]]}],null]}]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"U1wRmm04ZeyrDV2YLXESF"}
+4:null
