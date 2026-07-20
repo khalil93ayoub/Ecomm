@@ -1,0 +1,41 @@
+:root {
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+
+  --color-novara-black: #050505;
+  --color-novara-ink: #111111;
+  --color-novara-charcoal: #1a1a1a;
+  --color-novara-graphite: #2b2b2b;
+  --color-novara-ivory: #f8f5ef;
+  --color-novara-white: #ffffff;
+  --color-novara-stone: #e8e0d2;
+  --color-novara-mist: #f2eee7;
+  --color-novara-gold: #b9832f;
+  --color-novara-gold-soft: #d7ad64;
+  --color-novara-muted: #757575;
+  --color-novara-border: #ded7ca;
+  --color-novara-danger: #9f2525;
+  --color-novara-success: #247044;
+
+  --shadow-subtle: 0 12px 32px rgb(0 0 0 / 6%);
+  --shadow-soft: 0 18px 60px rgb(0 0 0 / 10%);
+  --shadow-premium: 0 24px 80px rgb(0 0 0 / 18%);
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --header-height: 72px;
+  --container-max: 1200px;
+  --container-wide: 1440px;
+
+  --space-section-sm: 56px;
+  --space-section-md: 84px;
+  --space-section-lg: 112px;
+
+  --ease-premium: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-fast: 160ms;
+  --duration-base: 260ms;
+  --duration-slow: 620ms;
+}

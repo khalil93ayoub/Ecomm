@@ -169,7 +169,7 @@ PRODUCTS = {
     "privateer": {
         "folder": "fossil-privateer",
         "price": "95 EUR",
-        "stripe": "https://buy.stripe.com/YOUR_STRIPE_LINK",
+        "stripe": "",
         "video": "",
         "images": ["fossil-privateer-hero.jpg", "privateer1.jpg", "privateer2.jpg", "privateer3.jpg", "privateer4.jpg"],
         "hero": "fossil-privateer-hero.jpg",
